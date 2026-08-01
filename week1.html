@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 1 · Public Persuasion (MSC 482)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-week="1">
+  <div class="layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="sb-collapse" id="sbCollapse" title="Hide sidebar" aria-label="Hide sidebar">‹</button>
+        <div class="sb-brand">
+          <div class="sb-course">Public Persuasion</div>
+          <div class="sb-name">🎙️ MSC 482</div>
+          <div class="sb-titleline">
+            <select class="week-select" data-week-switch aria-label="Switch week"></select>
+            <span class="sb-dash">Study Dashboard</span>
+          </div>
+        </div>
+        <div class="sb-progress" id="sbProgress"></div>
+        <div class="sb-block">
+          <div class="sb-label">Sections</div>
+          <nav class="nav-list" id="navList" aria-label="Section navigation"></nav>
+        </div>
+      </div>
+    </aside>
+    <button class="sb-show" id="sbShow" title="Show sidebar" aria-label="Show sidebar">›</button>
+
+    <!-- ── Main ── -->
+    <main class="main">
+      <div class="hero" id="hero"></div>
+
+      <section class="section-card" id="s-approach" data-zone="briefing" data-icon="🧭" data-nav="How to Approach">
+        <div class="section-head"><span class="sh-emoji">🧭</span><h2>How to Approach This Week</h2></div>
+        <div class="approach-body">
+          <p>Week 1 has one job: get you to notice how language already runs your life, before you spend four weeks learning to run it on purpose. Everything downstream — private writing, speechwriting, delivery — builds on the single idea both lectures return to: <b>notice the world, then influence the world.</b></p>
+          <p>The Course Launch session (your first required item) is where Prof. DeSanto lays out how he organizes the whole term, not just this week. He frames the entire course around two pillars:</p>
+          <div class="pillar-row">
+            <div class="pillar"><h5>Conviction</h5><p>The speaker's internal purpose — core values, active reflection, authentic passion, defining the problem you actually want to solve.</p></div>
+            <div class="pillar"><h5>Connection</h5><p>The audience's needs and values — audience analysis, clear organization, storytelling, conversational language, effective delivery.</p></div>
+          </div>
+          <p>The checklist below follows a specific order for a reason — you'll read the primary sources cold before either lecture interprets them for you:</p>
+          <ol class="order-list">
+            <li><b>Course Launch recording</b> — orientation, logistics, and the Conviction/Connection framework.</li>
+            <li><b>Week 1 Packet, pp. 1–16</b> — the Gettysburg Address itself, plus the BP oil-spill article, before either shows up in lecture.</li>
+            <li><b>Lecture 1 — Notice the World, Influence the World</b> — the course's working definition of persuasion.</li>
+            <li><b>Week 1 Packet, pp. 28–33</b> — the Slate and Psychology Today pieces the next lecture unpacks directly, by page number.</li>
+            <li><b>Lecture 2 — Ice Cream, Google, and the Gettysburg Address</b> — answers the question Lecture 1 poses: what need does language actually fill?</li>
+            <li><b>Week 1 Packet, pp. 40–59</b> — the Google S-1 and the HBR sense-making excerpt, rounding out the week.</li>
+          </ol>
+          <div class="callout callout-warn">
+            <span class="callout-title">Heads up</span>
+            <b>Two stories Lecture 2 spends real time on aren't in your assigned pages.</b> Vaclav Havel's essay on language and the full Reuben Mattus/Haagen-Dazs origin story both sit in the gaps between the three assigned ranges (roughly pp. 17–27 and 34–39). You don't need to track those pages down — the lecture gives you everything required for both.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-deliv" data-zone="execution" data-icon="🎯" data-nav="Deliverables">
+        <div class="section-head"><span class="sh-emoji">🎯</span><h2>Weekly Deliverables</h2></div>
+        <div class="section-body flush" id="deliverables"></div>
+      </section>
+
+      <section class="section-card" id="s-checklist" data-zone="execution" data-icon="✅" data-nav="Checklist">
+        <div class="section-head"><span class="sh-emoji">✅</span><h2>Weekly Checklist</h2><span id="toolbar" class="head-tools"></span></div>
+        <div class="section-body flush">
+          <div id="check-wrap" class="check-wrap"></div>
+          <div id="check-cards" class="check-cards"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-ideas" data-zone="reference" data-icon="💡" data-nav="Big Ideas">
+        <div class="section-head"><span class="sh-emoji">💡</span><h2>Weekly Big Ideas</h2></div>
+        <div class="idea-grid">
+          <div class="idea-card">
+            <span class="src-tag src-live">Live session · Lecture</span>
+            <h4>1. Persuasion Is Power to Move Others, Not Authority Over Them</h4>
+            <p>Perloff defines persuasion as "the study of attitudes and how to change them" — accurate, but incomplete. The course's working definition adds the missing piece: the ability to change others' beliefs <b>and spur action</b>. That's power, not authority — moving people who don't report to you, not just directing those who do.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>2. Words Govern Us and Words Inspire Us</h4>
+            <p>Lecture 1 splits language into two registers: words that <i>govern</i> (contracts, marriage certificates, dress codes, performance reviews — language that creates rights, obligations, duties) and words that <i>inspire</i> (the Declaration of Independence, MLK's "Letter from a Birmingham Jail," a 2004 convention speech that turned a state senator into a future president in 17 minutes). Both prove words aren't decoration — they're the mechanism by which anything actually happens.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture · Reading</span>
+            <h4>3. The Mind Craves Order — and Panics Without It</h4>
+            <p>Lecture 2 opens with Havel's idea that language is "social glue," and Borges's parable of Funes — a man who remembers everything perfectly but can't generalize or connect any of it, and goes mad. This week's reading supplies the real-world proof: the Psychology Today piece on conspiracy theories and the Slate piece on pandemic uncertainty both show people reaching for false certainty because the mind can't tolerate not knowing what comes next.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture · Reading</span>
+            <h4>4. Meaning Gets Manufactured, Not Just Found</h4>
+            <p>"Haagen-Dazs" means nothing in any language — Reuben Mattus invented it, umlaut included, because it sounded luxurious. Ben & Jerry's raised their first $4,000 on a business plan — words describing a vision, not yet a business. And when Google went public, its founders turned a routine SEC filing into "An Owner's Manual for Google's Shareholders," complete with "Don't Be Evil." Language doesn't just describe meaning — it creates it, on purpose.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Reading</span>
+            <h4>5. 272 Words Decided What a War Meant</h4>
+            <p>By Gettysburg, Lincoln's war — once predicted to last three weeks — was in its third year; 40,000 soldiers were dead or wounded from that battle alone, and he had a re-election to weigh in a critical state. He didn't resolve any of that with policy. He stood up and, in under three minutes and 272 words, decided what the battle, the war, and the country would mean going forward. That's the ceiling for what words can do.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Reading · Live session</span>
+            <h4>6. Sense-Making Is a Leadership Skill, Not Just a Lecture Topic</h4>
+            <p>The HBR excerpt in this week's reading names sense-making and visioning as core skills separating great leaders from the rest — diagnosing what's broken, then describing what could exist instead. That's this week's abstract idea (order from chaos) landing as a concrete, resume-relevant skill — and it's exactly what the Course Launch's "Conviction" pillar is asking you to start building.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-notes" data-zone="reference" data-icon="📝" data-nav="Master Notes">
+        <div class="section-head"><span class="sh-emoji">📝</span><h2>Master Notes</h2></div>
+        <div class="notes-block">
+          <div class="concept">
+            <h4>1. Defining Persuasion: From Attitudes to Action</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Two working definitions of persuasion — and the course deliberately picks the more demanding one.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Course Launch (live session) · Lecture 1</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Perloff: persuasion is the study of attitudes and how to change them. This course's definition: the ability to change others' beliefs <b>and spur action</b> — action is the missing piece. "Public" in the course title means addressing groups, not one-on-one conversation. Power (moving people who don't answer to you) is distinguished sharply from authority (people who do).</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Every assignment this term is graded on whether it moves someone to actually do something, not just agree with you in the abstract.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>2. Words That Govern vs. Words That Inspire</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Language operates in two registers, and most of it hides in plain sight because it's so constant.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 1</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Governing words: contracts, marriage certificates, dress codes, performance evaluations — language creating rights, obligations, duties, often without you registering it as language at all. Inspiring words: the Talmud, the Koran, the Gospels, the Declaration of Independence, MLK's "Letter from a Birmingham Jail." Modern example: Obama's 2004 DNC speech, given while he was one of 59 Illinois state senators, put him on a track to the presidency four years later.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>You already read and produce governing language daily without registering its power; this course is about learning to wield the inspiring register on purpose.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>3. The Human Need for Order (Havel &amp; Borges)</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Language exists to satisfy a basic human need: making sense of the world and imposing order on chaos.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 (Havel, Borges) · Reading pp. 28–33 (Psychology Today, Slate)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Havel: language is "social glue" — it unites disparate facts and answers "why" and "what next." Borges's Funes remembers every experience perfectly but can't generalize between any two of them, and the inability to make sense of anything drives him mad. The assigned reading supplies the real evidence: Psychology Today explains conspiracy-theory belief as a search for certainty in a confusing world; Slate makes the same case about pandemic-era anxiety over not knowing when things would end.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>If people crave order this badly, providing it — clearly, credibly — is itself a persuasive act. This is the psychological mechanism the rest of the course is built on.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>4. Meaning Manufactured: Ice Cream and Google</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Words don't just describe existing meaning — they can manufacture meaning where there was none.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 (Haagen-Dazs, Ben &amp; Jerry's) · Reading pp. 40–59 (Google S-1)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>"Haagen-Dazs" is a made-up word — no meaning in any language — chosen by Reuben Mattus purely for its luxurious sound. Ben &amp; Jerry's raised their first $4,000 on a business plan: a story told in words about a business that didn't exist yet. Google's actual SEC Form S-1 (in your assigned reading) opens with "An Owner's Manual for Google's Shareholders" and "Don't Be Evil" — turning a routine legal filing into a statement of identity investors could buy into.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Direct bridge to Private Writing next week: you're not just describing a policy problem, you're building the language that makes people believe the problem — and your solution — mean something.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>5. The Gettysburg Address: 272 Words, One New Meaning</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>The clearest proof in the course that language can permanently redefine what an event means.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Reading pp. 1–16 (the speech text itself) · Lecture 2 (context)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Delivered in 1863, three years into a war originally predicted to last three weeks; roughly 40,000 casualties at Gettysburg alone, ~700,000 dead across the whole war; Lincoln had his own re-election to weigh, in a critical state. Under three minutes, 272 words. After the speech, the battle, the war, the Constitution, and the country meant what Lincoln said they meant.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is the ceiling the course is aiming you toward — not for length or occasion, but for what's possible when conviction and word choice align.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>6. Sense-Making, Visioning, and the Road Ahead</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>This week's abstract idea (language creates order) is also a named, teachable leadership skill — and a preview of the whole course.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Reading pp. 40–59 (HBR excerpt) · Course Launch (Conviction/Connection framework)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>HBR names sense-making (diagnosing what's broken) and visioning (describing what could exist instead) as core leadership capabilities. The Course Launch session frames the whole term the same way: Conviction (internal purpose — core values, the problem you want to solve) and Connection (audience needs and values — analysis, organization, storytelling). The professor's own roadmap: private writing, then speechwriting, then presentation delivery.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Everything from here through Week 5 is this week's idea, applied: find your conviction (Week 2), connect it to an audience (Weeks 3–4), deliver it (Week 5).</dd></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-nblm" data-zone="reference" data-icon="🎧" data-nav="NotebookLM">
+        <div class="section-head"><span class="sh-emoji">🎧</span><h2>NotebookLM Prompts</h2></div>
+        <div class="copy-wrap">
+          <div class="callout">
+            <span class="callout-title">How to use these</span>
+            Upload this week's sources (both lecture transcripts, the Week 1 Packet, and the Course Launch overview if you have it) to a NotebookLM notebook, then paste these three prompts in order. Each builds on the last. All three are for <b>your own review only</b> — this course doesn't allow Generative AI on graded work, and each prompt says so explicitly.
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 1 — Overall Understanding + Synthesis</strong><div class="meta-desc">Run this first. Generates a study guide, master notes, and video/audio overview guidance.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm1-1">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm1-1">Using only the Week 1 sources I've uploaded to this notebook (the two lecture transcripts, the Week 1 Packet readings, and the Course Launch overview if included), generate four outputs:
+1. Written Study Guide
+2. Written Master Notes
+3. Text-forward Video Overview guidance
+4. Audio Overview guidance
+
+Week 1 theme: Notice the World, Influence the World.
+
+Use exactly these six top-level headings throughout all four outputs:
+1. Defining Persuasion: From Attitudes to Action
+2. Words That Govern vs. Words That Inspire
+3. The Human Need for Order (Havel & Borges)
+4. Meaning Manufactured: Ice Cream and Google
+5. The Gettysburg Address: 272 Words, One New Meaning
+6. Sense-Making, Visioning, and the Road Ahead
+
+For the Written Study Guide: teach the week clearly in plain English using the six headings above. Explain core concepts, key terms, examples, and source connections — and note which ideas come from the lectures versus the assigned packet pages, since a couple of stories in Lecture 2 (Havel, Haagen-Dazs) fall just outside my assigned reading ranges.
+
+For the Written Master Notes: go deeper using the same six headings. Organize by concept, not source. Synthesize across both lectures and the readings.
+
+For the Video Overview: text-forward, not decorative. Use the six-heading structure. Show readable on-screen concept names, definitions, short bullets, and key takeaway statements.
+
+For the Audio Overview: conversational, easy to listen to while walking or driving. Use the six-heading structure where it improves clarity. End with a fast verbal review checklist.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Private Writing Assignment or Persuasive Policy Speech. Help me understand, organize, and review only.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 2 — Master Notes Builder</strong><div class="meta-desc">Run after Prompt 1. Goes deeper on the same six headings.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm1-2">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm1-2">Build deeper concept-first master notes for Week 1: Notice the World, Influence the World.
+
+Use only the Week 1 sources in this notebook.
+
+Use exactly these six top-level headings:
+1. Defining Persuasion: From Attitudes to Action
+2. Words That Govern vs. Words That Inspire
+3. The Human Need for Order (Havel & Borges)
+4. Meaning Manufactured: Ice Cream and Google
+5. The Gettysburg Address: 272 Words, One New Meaning
+6. Sense-Making, Visioning, and the Road Ahead
+
+For each section include:
+1. Plain-English definition
+2. Key terms
+3. Main source connections — and whether each idea is from a lecture, the assigned reading, or the Course Launch session
+4. Useful examples
+5. Why it matters for the course
+6. How it connects to Week 2's Private Writing Assignment
+7. Risks, omissions, or misunderstandings to avoid
+8. Questions to revisit
+
+Synthesize across sources rather than summarizing one at a time.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Private Writing Assignment or Persuasive Policy Speech.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 3 — Concept Check / Self-Quiz</strong><div class="meta-desc">Run last. Study-review only — not for drafting any graded work.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm1-3">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm1-3">Using only the Week 1 sources in this notebook, build a self-quiz I can use to check my own understanding of Week 1: Notice the World, Influence the World.
+
+Use the same six headings as before:
+1. Defining Persuasion: From Attitudes to Action
+2. Words That Govern vs. Words That Inspire
+3. The Human Need for Order (Havel & Borges)
+4. Meaning Manufactured: Ice Cream and Google
+5. The Gettysburg Address: 272 Words, One New Meaning
+6. Sense-Making, Visioning, and the Road Ahead
+
+For each heading, give me:
+1. Two short-answer questions that test whether I actually understood the concept, not just recall
+2. One question that asks me to apply the concept to an example from my own work or industry
+3. The correct answer or a strong model answer, so I can check myself
+
+Finish with three questions that connect Week 1 to what's coming in Week 2 (Private Writing) — the kind of question I should be able to answer before I start that assignment.
+
+This is for my own private review only. This course does not allow Generative AI on graded assignments — do not draft, outline, or suggest specific content for my Private Writing Assignment or Persuasive Policy Speech, even if I ask. If I ask you to help write my assignment, remind me of this rule instead.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ── Mobile chrome ── -->
+  <div class="m-backdrop" id="mBackdrop"></div>
+  <aside class="m-drawer" id="mDrawer" role="dialog" aria-label="Navigation"></aside>
+  <nav class="m-bar" id="mBar" aria-label="Quick navigation"></nav>
+
+  <div id="banner" aria-live="polite"></div>
+  <canvas id="confetti"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

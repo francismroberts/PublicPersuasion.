@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 5 · Public Persuasion (MSC 482)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-week="5">
+  <div class="layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="sb-collapse" id="sbCollapse" title="Hide sidebar" aria-label="Hide sidebar">‹</button>
+        <div class="sb-brand">
+          <div class="sb-course">Public Persuasion</div>
+          <div class="sb-name">🎙️ MSC 482</div>
+          <div class="sb-titleline">
+            <select class="week-select" data-week-switch aria-label="Switch week"></select>
+            <span class="sb-dash">Study Dashboard</span>
+          </div>
+        </div>
+        <div class="sb-progress" id="sbProgress"></div>
+        <div class="sb-block">
+          <div class="sb-label">Sections</div>
+          <nav class="nav-list" id="navList" aria-label="Section navigation"></nav>
+        </div>
+      </div>
+    </aside>
+    <button class="sb-show" id="sbShow" title="Show sidebar" aria-label="Show sidebar">›</button>
+
+    <!-- ── Main ── -->
+    <main class="main">
+      <div class="hero" id="hero"></div>
+
+      <section class="section-card" id="s-approach" data-zone="briefing" data-icon="🧭" data-nav="How to Approach">
+        <div class="section-head"><span class="sh-emoji">🧭</span><h2>How to Approach This Week</h2></div>
+        <div class="approach-body">
+          <p>The final week, and the biggest deliverable of the term: the Persuasive Policy Speech, worth 70% of your grade across two parts. Everything this week is delivery — you've already done the writing (Weeks 3–4). The professor's framework is simple: <b>conviction, connection, then the details.</b> If the first two are real, the details tend to take care of themselves.</p>
+          <ol class="order-list">
+            <li><b>Cook, Ch. 7</b> and the <b>delivery lectures</b> — read/watch before you record, not after.</li>
+            <li><b>Persuasive Policy Speech — Part 1 (written script)</b> — due Wednesday, Aug. 26. This is deliberately due <i>before</i> Part 2.</li>
+            <li><b>Live Discussion Session</b> — a good place to ask questions before the deadline.</li>
+            <li><b>Persuasive Policy Speech — Part 2 (video delivery)</b> — due Thursday, Aug. 27, one day later.</li>
+          </ol>
+          <div class="callout">
+            <span class="callout-title">Why the script is due a day early</span>
+            Lecture Part 3 says it directly: the point of turning in the script first is so you have at least a day to live with the text — mark it up, underline emphasis, cross things out — before you record. "I never, ever deliver a totally blank, untouched text, hot off the printer." Plan your own time around that gap; don't write and record back-to-back.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-deliv" data-zone="execution" data-icon="🎯" data-nav="Deliverables">
+        <div class="section-head"><span class="sh-emoji">🎯</span><h2>Weekly Deliverables</h2></div>
+        <div class="section-body flush" id="deliverables"></div>
+      </section>
+
+      <section class="section-card" id="s-checklist" data-zone="execution" data-icon="✅" data-nav="Checklist">
+        <div class="section-head"><span class="sh-emoji">✅</span><h2>Weekly Checklist</h2><span id="toolbar" class="head-tools"></span></div>
+        <div class="section-body flush">
+          <div id="check-wrap" class="check-wrap"></div>
+          <div id="check-cards" class="check-cards"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-ideas" data-zone="reference" data-icon="💡" data-nav="Big Ideas">
+        <div class="section-head"><span class="sh-emoji">💡</span><h2>Weekly Big Ideas</h2></div>
+        <div class="idea-grid">
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>1. Conviction, Connection, Details — In That Order</h4>
+            <p>The same hierarchy from Week 2, applied to delivery: if you're genuinely committed to what you believe and to the people in the room, the "details" of good speaking — the things we hear and see — tend to take care of themselves. Very good speakers are often not the most polished ones; they're the ones with real conviction and connection.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>2. What We Hear: Tone, Volume, Rate, Pause, Emphasis</h4>
+            <p>Rewatching Oprah's Golden Globes speech with eyes closed reveals it: a conversational baseline, punctuated by variation in volume and rate, real pauses (hold one beat longer than feels natural — a pause always feels longer to the speaker than the audience), and deliberate emphasis. "I didn't say she stole my book" said seven times, each with a different word stressed, produces seven different meanings — proof that emphasis is a choice, not an accident.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>3. What We See: Eye Contact, Face, Body, Gestures</h4>
+            <p>Rewatching Mario Cuomo with the volume off isolates it: real eye contact (not "eye dart"), facial expression, physical space (research says more space read as more powerful), and natural gestures within the "power zone" — imagine holding a series of balls, from ping-pong to basketball, roughly from your midsection to your shoulders. Avoid the "death grip" on the lectern and the "wind in the willows" lean.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>4. Mark Up the Script — Never Deliver It Blank</h4>
+            <p>Never staple your pages — sliding one page aside (the "DeSanto slide") beats flipping, which is distracting on camera. Practice paragraph by paragraph, marking where to speed up, slow down, or make an eye-contact note in the margin. Steve Jobs rented San Francisco's Moscone Center for a full week before his product launches purely to practice — polish is preparation, not talent.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Reading · Lecture</span>
+            <h4>5. Nerves Are Universal — and Manageable</h4>
+            <p>"I've been doing public speaking for about forty years... I have never, in my life, not been nervous." Cook's Chapter 7 explains why biologically: the "alarm reaction" (increased heart rate, lowered blood pressure, then a hormonal countershock) is automatic and normal. Concrete fixes: move deliberately, take deep breaths, avoid caffeine and dairy beforehand, and — most practically — over-prepare the opening, since that's where nerves peak hardest for everyone, including the professor.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Assignment</span>
+            <h4>6. One Speech, Two Submissions, Any Topic You Choose</h4>
+            <p>Part 1 (script) and Part 2 (video) share nearly identical instructions — same four strategies, same "audience of your choice," same requirement to name that audience on camera before you begin. The only real differences: Part 1 is 5–6 minutes as written; Part 2's delivered video runs 4–5 minutes, and Part 2 is worth slightly fewer points (30 vs. 40) since it's the same speech, delivered.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-notes" data-zone="reference" data-icon="📝" data-nav="Master Notes">
+        <div class="section-head"><span class="sh-emoji">📝</span><h2>Master Notes</h2></div>
+        <div class="notes-block">
+          <div class="concept">
+            <h4>1. Conviction, Connection, Details — In That Order</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Delivery has a hierarchy, and the "details" people usually associate with public-speaking coaching are actually the lowest-leverage part of it.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 1 (opening framework)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Conviction: committed to what's in your heart. Connection: committed to everyone in the room. Details: everything people usually think of as "delivery skills" — tone, volume, gestures, eye contact. The professor's claim: when conviction and connection are real, the details tend to take care of themselves, and bad habits become much easier to coach out.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>If your Part 2 delivery feels stiff in rehearsal, the fix usually isn't "try harder at gestures" — it's reconnecting with why you actually care about the topic you chose.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>2. What We Hear: Tone, Volume, Rate, Pause, Emphasis</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Good vocal delivery is a conversational baseline punctuated by deliberate variation — "counterpoints" — not a uniformly polished performance.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 1 (Oprah Golden Globes clip, watched with eyes closed)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Base tone: conversational, the same "be a person" quality from Week 3. On top of that: volume changes (louder and softer, not just louder), rate changes (speeding up and slowing down — this is what most separates good speakers from great ones), and pauses (a pause always feels far longer to the speaker than to the audience — when you think you've paused long enough, hold one more beat). Emphasis is a conscious choice: "I didn't say she stole my book" delivered seven times, stressing a different word each time, produces seven distinct meanings. Writing the speech doesn't finish the job — you have to go back and make sure the emphasis actually lands on what you meant.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Practicing your Part 2 recording out loud (not just reading silently) is the only way to actually hear whether your emphasis matches your intended meaning.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>3. What We See: Eye Contact, Face, Body, Gestures</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Visual delivery grows out of the same conviction and connection as vocal delivery, with a few specific, learnable techniques.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Parts 1–2 (Mario Cuomo clip, watched with volume off; live gesture demonstration)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Eye contact:</b> real, held contact with individual people for a second or two each — not "public speaker eye dart" (mechanically scanning up and down). <b>Face:</b> facial expressions and willingness to smile show conviction and desire to connect. <b>Body/space:</b> research shows more physical space reads as more powerful — full body engagement, turning naturally toward different parts of the audience the way you would in any real conversation; avoid leaning ("wind in the willows") and keep shoulders level. <b>Gestures:</b> stay within the "power zone" (midsection to shoulders), imagine holding a graduated series of balls (ping-pong to basketball) for gesture size, keep hands above the lectern, and avoid the "death grip" on the lectern itself.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>None of these are meant to be memorized as rules to perform — they're what naturally follows once you're actually trying to connect with a real audience, even a camera.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>4. Mark Up the Script — Never Deliver It Blank</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Writing the speech and being ready to deliver it are two different jobs, and the gap between Part 1's and Part 2's due dates exists specifically to do the second one.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Parts 2–3</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Never staple pages — sliding one page aside (the "DeSanto slide") avoids the distracting flip. Practice paragraph by paragraph, marking where to speed up, slow down, or add an eye-contact reminder in the margin. For a home setup with no real lectern, stacked boxes or books work fine — the point is simulating the physical situation, not the furniture. Steve Jobs rented the Moscone Center in San Francisco for a full week before major product launches purely to rehearse.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is the direct, practical reason Part 1 (script) is due a full day before Part 2 (video) — use that day.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>5. Nerves Are Universal — and Manageable</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Nervousness before speaking is a normal, automatic biological response, not a sign you're unprepared or bad at this.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 2 · Cook Ch. 7 (Alarm Reaction, Coping with the Shock-Adrenaline Response)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>The professor, after roughly 40 years of public speaking, still gets nervous before every speech. Cook's Chapter 7 explains the biology: Hans Selye's "alarm reaction" — an initial shock phase (increased heart rate, lowered blood pressure) followed by a hormonal "countershock" that stabilizes the body, driven by adrenaline. Practical coping techniques: move deliberately if you feel rigid, take deep breaths before starting, avoid caffeine and dairy in the hours before (both affect the throat), and — most concretely — over-practice your opening specifically, since nerves peak hardest right at the start for nearly everyone.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Reframing nerves as normal (rather than a problem to eliminate) is itself part of the coping strategy — fighting the feeling of being nervous about being nervous just compounds it.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>6. The Persuasive Policy Speech: What's Actually Being Asked</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>One speech, submitted twice — a written script, then a video delivery of that same speech — on any topic you choose, for any audience you choose.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Assignment instructions (Part 1 and Part 2, nearly identical text)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Topic: job-related, MSC-related, public policy, or otherwise — your choice, as long as it argues for a new policy, initiative, or belief. Audience: any you choose, but you must state who they are on the video before you begin speaking. Part 1: written in its entirety, 5–6 minutes as scripted, 40 points, due Wed. Aug. 26 by 5:00 p.m. CT. Part 2: video delivery of that same speech (minor live deviation from the script is fine), 4–5 minutes, 30 points, due Thu. Aug. 27 by 5:00 p.m. CT. Both list the same four strategies to apply: (1) visualize the audience and situation to choose your meaning; (2) be organized, use crisp conversational language and imagery; (3) use the persuasive tactics covered all term; (4) deliver with conviction and connection.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is every concept from all five weeks, applied at once — notice the world (Week 1), find your conviction (Week 2), credibility and color (Week 3), logic and emotion (Week 4), and now delivery (Week 5).</dd></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-nblm" data-zone="reference" data-icon="🎧" data-nav="NotebookLM">
+        <div class="section-head"><span class="sh-emoji">🎧</span><h2>NotebookLM Prompts</h2></div>
+        <div class="copy-wrap">
+          <div class="callout">
+            <span class="callout-title">How to use these</span>
+            Upload this week's sources (all three delivery-lecture transcripts and Cook Ch. 7) to a NotebookLM notebook, then paste these three prompts in order. These are for reviewing the <b>delivery concepts</b> only — never upload your actual speech script or video, and never ask NotebookLM (or any AI tool) to help write, revise, or rehearse your Persuasive Policy Speech itself. This course doesn't allow Generative AI on graded work, including this one.
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 1 — Overall Understanding + Synthesis</strong><div class="meta-desc">Run this first. Generates a study guide, master notes, and video/audio overview guidance.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm5-1">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm5-1">Using only the Week 5 sources I've uploaded to this notebook (the three delivery-lecture transcripts and Cook Chapter 7), generate four outputs:
+1. Written Study Guide
+2. Written Master Notes
+3. Text-forward Video Overview guidance
+4. Audio Overview guidance
+
+Week 5 theme: Tips on Prepared Speech Delivery.
+
+Use exactly these six top-level headings throughout all four outputs:
+1. Conviction, Connection, Details — In That Order
+2. What We Hear: Tone, Volume, Rate, Pause, Emphasis
+3. What We See: Eye Contact, Face, Body, Gestures
+4. Mark Up the Script — Never Deliver It Blank
+5. Nerves Are Universal — and Manageable
+6. The Persuasive Policy Speech: What's Actually Being Asked
+
+For the Written Study Guide: teach the week clearly in plain English using the six headings above. Explain core concepts, key terms, examples, and source connections.
+
+For the Written Master Notes: go deeper using the same six headings. Organize by concept, not source. Synthesize across all three lecture parts and the reading.
+
+For the Video Overview: text-forward, not decorative. Use the six-heading structure. Show readable on-screen concept names, definitions, short bullets, and key takeaway statements.
+
+For the Audio Overview: conversational, easy to listen to while walking or driving. Use the six-heading structure where it improves clarity. End with a fast verbal review checklist I can use right before I record.
+
+This course does not allow Generative AI on graded assignments. Do not draft, revise, or rehearse any part of my Persuasive Policy Speech — spoken or written. Help me understand and review the delivery concepts only.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 2 — Master Notes Builder</strong><div class="meta-desc">Run after Prompt 1. Goes deeper on the same six headings.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm5-2">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm5-2">Build deeper concept-first master notes for Week 5: Tips on Prepared Speech Delivery.
+
+Use only the Week 5 sources in this notebook.
+
+Use exactly these six top-level headings:
+1. Conviction, Connection, Details — In That Order
+2. What We Hear: Tone, Volume, Rate, Pause, Emphasis
+3. What We See: Eye Contact, Face, Body, Gestures
+4. Mark Up the Script — Never Deliver It Blank
+5. Nerves Are Universal — and Manageable
+6. The Persuasive Policy Speech: What's Actually Being Asked
+
+For each section include:
+1. Plain-English definition
+2. Key terms
+3. Main source connections (which lecture part, or Cook Ch. 7)
+4. Useful examples from the lectures (Oprah, Cuomo, Steve Jobs)
+5. Why it matters for delivering a speech well
+6. A short practice checklist I can run through before recording
+7. Risks or common mistakes to avoid
+8. Questions to revisit
+
+Synthesize across sources rather than summarizing one at a time.
+
+This course does not allow Generative AI on graded assignments. Do not draft, revise, or rehearse any part of my Persuasive Policy Speech — spoken or written.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 3 — Concept Check / Self-Quiz</strong><div class="meta-desc">Run last. Study-review only — not for drafting, revising, or rehearsing your speech.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm5-3">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm5-3">Using only the Week 5 sources in this notebook, build a self-quiz I can use to check my own understanding of Week 5: Tips on Prepared Speech Delivery.
+
+Use the same six headings as before:
+1. Conviction, Connection, Details — In That Order
+2. What We Hear: Tone, Volume, Rate, Pause, Emphasis
+3. What We See: Eye Contact, Face, Body, Gestures
+4. Mark Up the Script — Never Deliver It Blank
+5. Nerves Are Universal — and Manageable
+6. The Persuasive Policy Speech: What's Actually Being Asked
+
+For each heading, give me:
+1. Two short-answer questions that test whether I actually understood the concept, not just recall
+2. One question that asks me to identify the technique in a specific moment from the Oprah or Cuomo clips discussed in lecture
+3. The correct answer or a strong model answer, so I can check myself
+
+Finish with three questions that check whether I understand what the Persuasive Policy Speech assignment is actually asking for — topic freedom, audience naming, the two submission parts, and the time limits for each.
+
+This is for my own private review only. Do not ask me to describe, summarize, or share any content from my actual speech. This course does not allow Generative AI on graded assignments — do not draft, revise, rehearse, or give feedback on any part of my Persuasive Policy Speech, even if I ask. If I ask you to help with my speech directly, remind me of this rule instead.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ── Mobile chrome ── -->
+  <div class="m-backdrop" id="mBackdrop"></div>
+  <aside class="m-drawer" id="mDrawer" role="dialog" aria-label="Navigation"></aside>
+  <nav class="m-bar" id="mBar" aria-label="Quick navigation"></nav>
+
+  <div id="banner" aria-live="polite"></div>
+  <canvas id="confetti"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 4 · Public Persuasion (MSC 482)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-week="4">
+  <div class="layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="sb-collapse" id="sbCollapse" title="Hide sidebar" aria-label="Hide sidebar">‹</button>
+        <div class="sb-brand">
+          <div class="sb-course">Public Persuasion</div>
+          <div class="sb-name">🎙️ MSC 482</div>
+          <div class="sb-titleline">
+            <select class="week-select" data-week-switch aria-label="Switch week"></select>
+            <span class="sb-dash">Study Dashboard</span>
+          </div>
+        </div>
+        <div class="sb-progress" id="sbProgress"></div>
+        <div class="sb-block">
+          <div class="sb-label">Sections</div>
+          <nav class="nav-list" id="navList" aria-label="Section navigation"></nav>
+        </div>
+      </div>
+    </aside>
+    <button class="sb-show" id="sbShow" title="Show sidebar" aria-label="Show sidebar">›</button>
+
+    <!-- ── Main ── -->
+    <main class="main">
+      <div class="hero" id="hero"></div>
+
+      <section class="section-card" id="s-approach" data-zone="briefing" data-icon="🧭" data-nav="How to Approach">
+        <div class="section-head"><span class="sh-emoji">🧭</span><h2>How to Approach This Week</h2></div>
+        <div class="approach-body">
+          <p>Three true paths to influence: credibility (Week 3), logic, and emotion. This week is the last two. The professor's closing framework for the whole term is <b>Know, Feel, Do</b> — know is logic, feel is emotion, do is credibility/trust. Every part of your speech should be checked against all three.</p>
+          <p>The week has a clear arc: logic first, then its limits, then emotion picks up exactly where logic runs out.</p>
+          <ol class="order-list">
+            <li><b>Week 3 Packet, pp. 1–35</b> — fallacies, two-sided messaging, and evidence effectiveness, cited by exact page range in Lecture 1.</li>
+            <li><b>Lecture 1 (Using Logical Appeals)</b> — facts, organization, strong openings, then the honest limits of logic.</li>
+            <li><b>Week 3 Packet, pp. 55–117</b> (three ranges) — supporting material for the emotional-appeals lectures.</li>
+            <li><b>Lecture 1 Part 1 (Using Emotional Appeals)</b> and <b>Part 2</b> — stories, values, shared history, urgency, and a fully annotated Obama speech tying everything together.</li>
+            <li><b>Luntz, Ch. 1–4, 7–8, 10, 12</b> — read alongside or after the lectures; Chapter 1's Ten Rules of Effective Language is the most concrete material in the book.</li>
+            <li><b>Cook, Ch. 10</b> — a genuinely different angle (source credibility research, cognitive dissonance, body-language studies) worth reading after both lectures.</li>
+          </ol>
+          <div class="callout callout-warn">
+            <span class="callout-title">Heads up</span>
+            Lecture 1 Part 2 reads a long, fully annotated excerpt from Barack Obama's 2007 campaign announcement speech, citing it at packet pages 121–125. That falls just outside all four assigned Week 3 Packet ranges (1–35, 55–84, 88–103, 107–117) — the same kind of gap as Week 1's Havel/Haagen-Dazs stories. You don't need to track down that page; the lecture reads the relevant lines in full.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-deliv" data-zone="execution" data-icon="🎯" data-nav="Deliverables">
+        <div class="section-head"><span class="sh-emoji">🎯</span><h2>Weekly Deliverables</h2></div>
+        <div class="section-body flush" id="deliverables"></div>
+      </section>
+
+      <section class="section-card" id="s-checklist" data-zone="execution" data-icon="✅" data-nav="Checklist">
+        <div class="section-head"><span class="sh-emoji">✅</span><h2>Weekly Checklist</h2><span id="toolbar" class="head-tools"></span></div>
+        <div class="section-body flush">
+          <div id="check-wrap" class="check-wrap"></div>
+          <div id="check-cards" class="check-cards"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-ideas" data-zone="reference" data-icon="💡" data-nav="Big Ideas">
+        <div class="section-head"><span class="sh-emoji">💡</span><h2>Weekly Big Ideas</h2></div>
+        <div class="idea-grid">
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>1. Three True Paths, One Framework: Know, Feel, Do</h4>
+            <p>Aristotle's logos, pathos, and ethos translate into a troubleshooting question for any part of a speech: what does my audience need to <b>know</b> (logic)? How do they need to <b>feel</b> (emotion)? Have I done enough for them to <b>do</b> what I'm asking (credibility/trust)? The professor's closing line: "the leader follows, though a step ahead" — real leadership in a speech means pulling people forward from where they already are, not where you wish they were.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>2. Using Logic: Facts, Organization, and Strong Openings</h4>
+            <p>Facts and numbers need "more words per square thought" to land (a callback to Week 3). Structure follows problem-solution, often in three parts. Openings should grab attention before the roadmap — a stunning unrounded number (430,222) or a pop-culture reference, not "thank you for having me." Two-sided messaging (the "sandwich": positive argument, brief counterargument, more positive argument) builds credibility precisely because it doesn't hide the other side.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>3. The Limits of Logic: Fallacies and Motivated Reasoning</h4>
+            <p>Avoid questionable authority, either-or framing, inconsistency, ad hominem, slippery slope, and hasty conclusions. But the deeper problem: a famous Stanford study gave two groups fake performance scores, then told both groups the scores were fabricated — people still rated their own abilities based on the fake numbers. Impressions, once formed, are remarkably resilient, especially when audiences are "ego-involved" — a Dartmouth-Princeton study found fans from each school watched the identical football film and each blamed the other team for dirty play.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>4. Using Emotion: Stories That Move People</h4>
+            <p>A story is defined precisely: "an imagined or reimagined experience narrated with enough detail and feeling to cause your listener's imagination to experience it as a real sensation." Three kinds: example (something that actually happened), vision (painting what the world could look like), and mission (giving the audience a stake in something larger). A viral clip about a widower who painted his whole Ohio town after losing his wife does more than any statistic about civic engagement ever could.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>5. Values, History, Urgency, and the Power of We</h4>
+            <p>Frame the problem as inconsistent with shared values, and the solution as consistent with them — a capuchin monkey refusing a cucumber once it sees its neighbor getting a grape shows fairness is practically biological. Lincoln's "four score and seven years ago" is a historical argument: appeal to what we already agree on. Close with urgency (why now), optimism (the world as it can be), and unity — the deliberate, repeated use of "we."</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Reading</span>
+            <h4>6. Credibility Under the Microscope: Source, Argument, Body</h4>
+            <p>Cook's Chapter 10 adds real research the lectures don't fully cover: source credibility depends on reputation, fairness, and even how well your intro is delivered (Boeing's president publicly admitting fault after a pricing scandal actually rebuilt trust). Cognitive dissonance can be used deliberately — showing an audience two beliefs they hold that can't both be true. And Dartmouth researchers found presidential debate winners across three different elections shared strikingly similar body language, regardless of their arguments' content.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-notes" data-zone="reference" data-icon="📝" data-nav="Master Notes">
+        <div class="section-head"><span class="sh-emoji">📝</span><h2>Master Notes</h2></div>
+        <div class="notes-block">
+          <div class="concept">
+            <h4>1. Three True Paths, One Framework: Know, Feel, Do</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Logos, pathos, and ethos reduce to a simple diagnostic: know (logic), feel (emotion), do (credibility/trust) — trust is what makes an audience willing to act at all.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Emotional Appeals Part 2 (closing synthesis)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>The framework is explicitly a troubleshooting tool: at each part of a speech, ask whether you've given logical thinkers enough facts, given emotionally-motivated listeners enough feeling, and built enough trust (organization + conversational tone, from Week 3) that people will actually act on what you're asking. Research becomes important here — not just to find facts, but to find the right facts and the right stories for a specific audience.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is the single most useful editing checklist for your own Persuasive Policy Speech draft — run every section through Know/Feel/Do before you consider it finished.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>2. Using Logic: Facts, Organization, and Strong Openings</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Logic in a speech isn't just correct facts — it's facts delivered with enough context to land, inside a structure the audience can follow without effort.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 1 (Using Logical Appeals) · Reading pp. 1–35 (two-sided messaging, pp. 10–13)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Numbers need "more words per square thought" — set up, deliver, reinforce. Problem-solution is the default structure, often in three parts (rule of three again). Openings should gain attention before the roadmap: an unrounded "stunning number" (430,222 — the opposite of Week 3's rounding advice) or a pop-culture reference, deliberately "playing against type" instead of a generic thank-you. Two-sided messaging — stating the opposing argument briefly, then countering it, sandwiched between positive points — builds credibility precisely because it signals you aren't hiding anything.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Two-sided messaging in particular is a direct, practical tool for the "opposing viewpoints" section any strong policy speech needs.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>3. The Limits of Logic: Fallacies and Motivated Reasoning</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Avoiding fallacious reasoning matters, but the bigger problem is that facts alone often can't move an audience whose identity is bound up in a position.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 1 (Using Logical Appeals) · Reading pp. 1–35 (fallacies pp. 3–8, evidence pp. 13–24) · Cook Ch. 10 (philosophers on persuasion)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Common fallacies to avoid: questionable authority, either-or framing, inconsistency, ad hominem, slippery slope, hasty conclusion. A famous 1970s Stanford study told two groups their scores on a task were real, then revealed the scores were fabricated — participants' self-assessments stayed anchored to the fake numbers anyway; "once formed, impressions are remarkably resilient." A Dartmouth-Princeton study found fans of each school, watching the identical football film, each identified the other team as playing dirty — a phenomenon researchers call "ego-involvement" or "motivated reasoning," explained by theories like belief in a just world, system justification, social dominance orientation, and cultural cognition. Cook's Chapter 10 adds a historical footnote: for 1,500 years, scientists believed arrows stayed aloft because of air rushing in behind them, purely because Aristotle said so.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is the most important limitation to understand in the whole course: no matter how good your fact is, it may simply not reach an audience that's identity-invested in disagreeing — which is exactly why emotion isn't a lesser tool, it's the necessary one.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>4. Using Emotion: Stories That Move People</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Stories connect people at one shared moment the way pure data cannot, and come in three distinct types depending on the goal.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Emotional Appeals Part 1</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Definition: "an imagined or reimagined experience narrated with enough detail and feeling to cause your listener's imagination to experience it as a real sensation." <b>Example story</b> — something that actually happened (a specific customer journey). <b>Vision story</b> — paints what the world could look like for someone affected by your idea, even without a real named person. <b>Mission story</b> — gives the audience a stake in something larger than themselves, often tied to shared history. Illustrative case: a viral news segment about a widower in Glouster, Ohio who repainted his whole town after his wife's death — impressive shuttle statistics were shown right after as a deliberate contrast, to demonstrate that raw numbers don't move people the way a story does.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>A story is the most direct route to the "feel" part of Know/Feel/Do, and Steve Jobs's Stanford speech (Week 3) was, in the professor's own framing, built entirely out of three stories.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>5. Values, History, Urgency, and the Power of We</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Frame the problem as inconsistent with values the audience already holds, and the solution as consistent with them — then add urgency, optimism, and unity to move from belief to action.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Emotional Appeals Part 1 · Cook Ch. 10 (emotional-appeal categories)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Values run deep: a famous fairness study gave capuchin monkeys cucumber for a task, which they accepted happily — until they saw a neighboring monkey get a grape for the same task, after which they refused the cucumber outright. A Subaru ad about "the humble back seat" never mentions specs — it sells love, family, and safety. Shared history works the same way Lincoln used it at Gettysburg ("four score and seven years ago") and in the Lincoln-Douglas debates over what the founders intended for slavery — both sides argued from the same shared past. Close with urgency (why this matters right now), an optimistic vision of what's possible, and deliberate, repeated use of "we" (a unity appeal).</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Cook's Chapter 10 adds a usable list of common emotional appeals beyond values alone — justice/fair play, patriotism, sympathy, desire for freedom, guilt, conformity, and fear — with an explicit ethical line: appeals to greed, or to fears that don't correspond to real risk, are widely considered out of bounds.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>6. Credibility Under the Microscope: Source, Argument, Body</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Cook Ch. 10 organizes decades of persuasion research into three factors: source credibility, effective argumentation, and body language — each with specific, actionable findings.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Cook Ch. 10 (reading only — not covered directly in the lectures)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Source credibility:</b> reputation (Boeing's president publicly admitted fault after a fraud scandal — direct admission rebuilt more trust than denial had cost); belief/attitude similarity (Gerald Ford's 1976 debate claim that Poland wasn't under Soviet control tanked his credibility instantly); fairness (a land developer's claim a new store would be "owner-operated" collapsed under questioning about what "owner" actually meant). <b>Effective argumentation:</b> people are more loss-averse than gain-motivated; reframe issues rather than attack them head-on; cognitive dissonance can be used deliberately by pointing out two beliefs an audience holds that can't both be true; give your best support first and last (the primacy/recency effect). <b>Body language:</b> Dartmouth researchers analyzing the 1960, 1976, and 1980 presidential debates found winners shared relaxed, warm, good-humored styles regardless of their specific arguments — Kennedy over Nixon, Carter over Ford, Reagan over Carter.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This chapter is the single deepest research grounding for credibility in the whole course — worth returning to specifically when preparing to deliver (not just write) your speech in Week 5.</dd></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-nblm" data-zone="reference" data-icon="🎧" data-nav="NotebookLM">
+        <div class="section-head"><span class="sh-emoji">🎧</span><h2>NotebookLM Prompts</h2></div>
+        <div class="copy-wrap">
+          <div class="callout">
+            <span class="callout-title">How to use these</span>
+            Upload this week's sources (all three lecture transcripts, Cook Ch. 10, the Week 3 Packet, and Luntz Ch. 1–4, 7–8, 10, 12 if you have a digital copy) to a NotebookLM notebook, then paste these three prompts in order. For your own review only — this course doesn't allow Generative AI on graded work.
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 1 — Overall Understanding + Synthesis</strong><div class="meta-desc">Run this first. Generates a study guide, master notes, and video/audio overview guidance.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm4-1">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm4-1">Using only the Week 4 sources I've uploaded to this notebook (all three lecture transcripts, Cook Chapter 10, the Week 3 Packet, and Luntz Words That Work Chapters 1–4, 7–8, 10, and 12), generate four outputs:
+1. Written Study Guide
+2. Written Master Notes
+3. Text-forward Video Overview guidance
+4. Audio Overview guidance
+
+Week 4 theme: Moving People to Action with Logic & Emotion.
+
+Use exactly these six top-level headings throughout all four outputs:
+1. Three True Paths, One Framework: Know, Feel, Do
+2. Using Logic: Facts, Organization, and Strong Openings
+3. The Limits of Logic: Fallacies and Motivated Reasoning
+4. Using Emotion: Stories That Move People
+5. Values, History, Urgency, and the Power of We
+6. Credibility Under the Microscope: Source, Argument, Body
+
+For the Written Study Guide: teach the week clearly in plain English using the six headings above. Explain core concepts, key terms, examples, and source connections.
+
+For the Written Master Notes: go deeper using the same six headings. Organize by concept, not source. Synthesize across all three lectures and the reading.
+
+For the Video Overview: text-forward, not decorative. Use the six-heading structure. Show readable on-screen concept names, definitions, short bullets, and key takeaway statements.
+
+For the Audio Overview: conversational, easy to listen to while walking or driving. Use the six-heading structure where it improves clarity. End with a fast verbal review checklist.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Persuasive Policy Speech. Help me understand, organize, and review only.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 2 — Master Notes Builder</strong><div class="meta-desc">Run after Prompt 1. Goes deeper on the same six headings.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm4-2">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm4-2">Build deeper concept-first master notes for Week 4: Moving People to Action with Logic & Emotion.
+
+Use only the Week 4 sources in this notebook.
+
+Use exactly these six top-level headings:
+1. Three True Paths, One Framework: Know, Feel, Do
+2. Using Logic: Facts, Organization, and Strong Openings
+3. The Limits of Logic: Fallacies and Motivated Reasoning
+4. Using Emotion: Stories That Move People
+5. Values, History, Urgency, and the Power of We
+6. Credibility Under the Microscope: Source, Argument, Body
+
+For each section include:
+1. Plain-English definition
+2. Key terms
+3. Main source connections (lecture vs. Cook vs. Luntz vs. Week 3 Packet)
+4. Useful examples
+5. Why it matters for the course
+6. How it applies to my own Persuasive Policy Speech (due Week 5)
+7. Risks, omissions, or misunderstandings to avoid
+8. Questions to revisit
+
+Synthesize across sources rather than summarizing one at a time.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Persuasive Policy Speech.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 3 — Concept Check / Self-Quiz</strong><div class="meta-desc">Run last. Study-review only — not for drafting any graded work.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm4-3">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm4-3">Using only the Week 4 sources in this notebook, build a self-quiz I can use to check my own understanding of Week 4: Moving People to Action with Logic & Emotion.
+
+Use the same six headings as before:
+1. Three True Paths, One Framework: Know, Feel, Do
+2. Using Logic: Facts, Organization, and Strong Openings
+3. The Limits of Logic: Fallacies and Motivated Reasoning
+4. Using Emotion: Stories That Move People
+5. Values, History, Urgency, and the Power of We
+6. Credibility Under the Microscope: Source, Argument, Body
+
+For each heading, give me:
+1. Two short-answer questions that test whether I actually understood the concept, not just recall
+2. One question that asks me to identify a fallacy, emotional appeal, or credibility factor in a real example of my choosing
+3. The correct answer or a strong model answer, so I can check myself
+
+Finish with three questions that connect Week 4 to what's coming in Week 5 (delivery and the finished Persuasive Policy Speech) — the kind of question I should be able to answer before that week starts.
+
+This is for my own private review only. This course does not allow Generative AI on graded assignments — do not draft, outline, or suggest specific content for my Persuasive Policy Speech, even if I ask. If I ask you to help write my speech, remind me of this rule instead.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ── Mobile chrome ── -->
+  <div class="m-backdrop" id="mBackdrop"></div>
+  <aside class="m-drawer" id="mDrawer" role="dialog" aria-label="Navigation"></aside>
+  <nav class="m-bar" id="mBar" aria-label="Quick navigation"></nav>
+
+  <div id="banner" aria-live="polite"></div>
+  <canvas id="confetti"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home · Public Persuasion (MSC 482)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-hub>
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="sb-collapse" id="sbCollapse" title="Hide sidebar" aria-label="Hide sidebar">‹</button>
+        <div class="sb-brand">
+          <div class="sb-course">Public Persuasion</div>
+          <div class="sb-name">🎙️ MSC 482</div>
+          <div class="sb-titleline">
+            <select class="week-select" data-week-switch aria-label="Switch week"></select>
+            <span class="sb-dash">Study Dashboard</span>
+          </div>
+        </div>
+        <div class="sb-progress" id="hubProgress"></div>
+        <div class="sb-block">
+          <div class="sb-label">On this page</div>
+          <nav class="nav-list" id="navList" aria-label="Section navigation"></nav>
+        </div>
+      </div>
+    </aside>
+    <button class="sb-show" id="sbShow" title="Show sidebar" aria-label="Show sidebar">›</button>
+
+    <main class="main">
+      <div class="hero" id="hero"></div>
+
+      <section class="section-card" id="s-pinned" data-zone="briefing" data-icon="📌" data-nav="Deadlines">
+        <div class="section-head"><span class="sh-emoji">📌</span><h2>Key Deadlines</h2></div>
+        <div class="section-body"><div class="pin-grid" id="hubPinned"></div></div>
+      </section>
+
+      <section class="section-card" id="s-schedule" data-zone="briefing" data-icon="🗓️" data-nav="Schedule">
+        <div class="section-head"><span class="sh-emoji">🗓️</span><h2>Course Schedule</h2></div>
+        <div class="section-body flush" id="hubSchedule"></div>
+      </section>
+
+      <section class="section-card" id="s-weeks" data-zone="briefing" data-icon="📅" data-nav="Weeks">
+        <div class="section-head"><span class="sh-emoji">📅</span><h2>The Five Weeks</h2></div>
+        <div class="section-body"><div class="wk-grid" id="hubWeeks"></div></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="m-backdrop" id="mBackdrop"></div>
+  <aside class="m-drawer" id="mDrawer" role="dialog" aria-label="Navigation"></aside>
+  <nav class="m-bar" id="mBar" aria-label="Quick navigation"></nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

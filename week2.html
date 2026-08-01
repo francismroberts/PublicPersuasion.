@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 2 · Public Persuasion (MSC 482)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-week="2">
+  <div class="layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="sb-collapse" id="sbCollapse" title="Hide sidebar" aria-label="Hide sidebar">‹</button>
+        <div class="sb-brand">
+          <div class="sb-course">Public Persuasion</div>
+          <div class="sb-name">🎙️ MSC 482</div>
+          <div class="sb-titleline">
+            <select class="week-select" data-week-switch aria-label="Switch week"></select>
+            <span class="sb-dash">Study Dashboard</span>
+          </div>
+        </div>
+        <div class="sb-progress" id="sbProgress"></div>
+        <div class="sb-block">
+          <div class="sb-label">Sections</div>
+          <nav class="nav-list" id="navList" aria-label="Section navigation"></nav>
+        </div>
+      </div>
+    </aside>
+    <button class="sb-show" id="sbShow" title="Show sidebar" aria-label="Show sidebar">›</button>
+
+    <!-- ── Main ── -->
+    <main class="main">
+      <div class="hero" id="hero"></div>
+
+      <section class="section-card" id="s-approach" data-zone="briefing" data-icon="🧭" data-nav="How to Approach">
+        <div class="section-head"><span class="sh-emoji">🧭</span><h2>How to Approach This Week</h2></div>
+        <div class="approach-body">
+          <p>Week 1 was about noticing that language has power. Week 2 is about finding out what <b>you</b> actually believe, before you're asked to persuade anyone of anything. Everything here builds toward one deliverable: a one-page summary of your own private writing, due Friday.</p>
+          <p>Lecture 1 opens with a question worth answering honestly before you read further: think of the best public speaker you've ever seen. What do you actually remember about them? Prof. DeSanto's answer, from years of asking that question, comes down to two words:</p>
+          <div class="pillar-row">
+            <div class="pillar"><h5>Conviction</h5><p>Do you actually believe your message? Speakers with real passion and integrity read as believable, not like they're selling something.</p></div>
+            <div class="pillar"><h5>Connection</h5><p>Are you reaching the people in front of you — through story, relatability, feeling truly spoken to?</p></div>
+          </div>
+          <p>This week is entirely about the first pillar. Most of the rest of the course is about the second. You can't skip ahead to connection, because — as the $100 bill exercise in Lecture 2 puts it — <b>you can't give what you don't have.</b></p>
+          <ol class="order-list">
+            <li><b>Levy, <i>Accidental Genius</i>, pp. 1–128</b> — start this early; it's the longest item this week, and the how-to workshop assumes you already know his examples.</li>
+            <li><b>Week 1 Packet, pp. 60–83</b> — the trust-decline statistics and the Terry Pearce article Lecture 2 Part 2 cites by exact page number.</li>
+            <li><b>Lecture 2 Part 1 (Introduction)</b> — the conviction/connection framework, then a pause to watch three short speeches.</li>
+            <li><b>Three speeches</b> — MLK, Oprah Winfrey, and a Georgia Tech student speaker, watched back-to-back right where Lecture 1 sends you.</li>
+            <li><b>Lecture 2 Part 2 (Review)</b> — why conviction matters more today than ever, and the belief → action mechanism.</li>
+            <li><b>Lecture 2 Part 3 (How To)</b> — the hands-on workshop. Actually do the writing exercises as they come up; don't just watch.</li>
+            <li><b>Private Writing Handouts</b> — keep this open during the workshop; it's referenced by number throughout.</li>
+            <li><b>Private Writing Assignment</b> — due Friday, August 7. Needs a real session behind it, not just the workshop's 3-minute drills.</li>
+          </ol>
+          <div class="callout">
+            <span class="callout-title">On the assignment</span>
+            You're <b>not</b> submitting your actual private writing — that stays yours alone. You're submitting a short summary: what you wrote about (if you're comfortable saying), what you noticed, what you're now considering doing about it, and which technique worked best for you. Full instructions are in the Deliverables section below, taken directly from the assignment prompt.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-deliv" data-zone="execution" data-icon="🎯" data-nav="Deliverables">
+        <div class="section-head"><span class="sh-emoji">🎯</span><h2>Weekly Deliverables</h2></div>
+        <div class="section-body flush" id="deliverables"></div>
+      </section>
+
+      <section class="section-card" id="s-checklist" data-zone="execution" data-icon="✅" data-nav="Checklist">
+        <div class="section-head"><span class="sh-emoji">✅</span><h2>Weekly Checklist</h2><span id="toolbar" class="head-tools"></span></div>
+        <div class="section-body flush">
+          <div id="check-wrap" class="check-wrap"></div>
+          <div id="check-cards" class="check-cards"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-ideas" data-zone="reference" data-icon="💡" data-nav="Big Ideas">
+        <div class="section-head"><span class="sh-emoji">💡</span><h2>Weekly Big Ideas</h2></div>
+        <div class="idea-grid">
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>1. Persuasion Is Personal Advocacy for a Solution to a Problem</h4>
+            <p>Lecture 1 reframes persuasion in three parts: something's broken (the problem), you have a fix (the solution), and you actually believe in it (the conviction). "I believe we should build a recycling program" — problem: pollution, solution: recycling. Skip any one piece and the persuasion collapses, no matter how polished the delivery.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture · Reading</span>
+            <h4>2. Conviction Matters More Now Than Ever</h4>
+            <p>Not a platitude — Lecture 2 makes the case with numbers. A University of Chicago study found people less optimistic about the next generation than in 25 years, with reported isolation double what it was a few years ago. Meanwhile trust in traditional leaders keeps falling — the reading notes only 17% trusted Washington to do the right thing during the pandemic. A more confusing world with less-trusted leaders is exactly the environment where communicating from real conviction cuts through.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>3. Belief Drives Action — In You, and In Everyone You Address</h4>
+            <p>Cognitive psychology's chain: beliefs lead to thoughts, thoughts lead to feelings, feelings lead to action. Whole Foods doesn't sell Oreos, because Whole Foods believes in fresh, organic food — and that communicated belief is what draws people through the door. After Steve Jobs died, people didn't leave notes at Apple Stores about the RAM in a MacBook; they wrote "you made me feel free." They were responding to what Apple stood for, not what it made.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>4. Private Writing Works Because It Combines Freedom and Discipline</h4>
+            <p>Freedom: a dedicated space and time where you turn everything else off and let your right brain associate freely. Discipline: a timer and a page that keeps your mind from wandering off entirely. Mark Levy's <i>Accidental Genius</i> is the source for the whole method — write fast enough, and often enough, that ideas leave a trail instead of evaporating. Lee Iacocca's autobiography makes the same point about writing and accountability.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>5. Ten Named Techniques, One Underlying Process</h4>
+            <p>Five basic moves (Try Easy, Write Fast and Continuously, Work Against a Limit, Write the Way You Think, Go with the Thought) generate raw material without self-editing. One refinement move (Redirect Your Attention) turns that raw material into your next prompt. Four advanced techniques (Open Up Words, Testing Assumptions, Nuggets of Wisdom, Paper Conversations) go after specific kinds of insight. All ten exist for one reason: get past what sounds impressive to what you actually think.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Reading · Live session</span>
+            <h4>6. Conviction Doesn't Require Fame</h4>
+            <p>Lecture 1 pairs Martin Luther King's "I Have a Dream" and Oprah Winfrey's Golden Globes speech with a talk almost nobody has heard of: a Georgia Tech student welcoming that year's freshman class. The pairing is deliberate — conviction isn't a function of who you are or how big the stage is. It's a function of whether you mean what you're saying.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-notes" data-zone="reference" data-icon="📝" data-nav="Master Notes">
+        <div class="section-head"><span class="sh-emoji">📝</span><h2>Master Notes</h2></div>
+        <div class="notes-block">
+          <div class="concept">
+            <h4>1. Persuasion as Personal Advocacy: Problem, Solution, Conviction</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Persuasion is personal advocacy for a solution to a problem — three components, all required.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 1</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Examples given: "I believe we should develop a recycling program" (problem: pollution, solution: recycling); "I believe we should change the department's vacation policy" (problem: morale, solution: policy change). The point isn't the topic — it's that all persuasive statements decompose into a broken thing, a fix, and a person who actually believes the fix matters.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is literally the structure your Private Writing summary should reveal: what's broken (as you see it), what you're now considering, and why you care.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>2. Why Conviction Matters More Than Ever</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Two forces make conviction unusually valuable right now: a more confusing world, and less-trusted traditional leaders.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 2 · Reading pp. 60–83 (Week 1 Packet)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>25 years of disorienting events (impeachment, a Supreme-Court-decided election, 9/11, the Great Recession, fake news, a pandemic). A University of Chicago study found record-low optimism about the next generation and reported isolation double previous levels. The reading (p. 64) cites only 17% trust in Washington during the pandemic. Congress and the press poll at historic lows; non-traditional messengers (the lecture names Stephen Colbert, Jon Stewart) are trusted more than official ones.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Standing up as a leader is harder now precisely because leadership itself is trusted less — which is exactly why communicating from real, disclosed conviction stands out.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>3. Belief Drives Action: From Oreos to Apple</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Belief precedes action, in a simple cognitive chain — and that's as true of audiences as it is of you.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 2</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Belief → thought → feeling → action. Personal example: you won't exercise unless you believe it's worth doing. Organizational example: Whole Foods stocks zero Oreos because Oreos contradict what Whole Foods believes in (fresh, sustainable, organic) — and shoppers who share that belief show up because of it. After Steve Jobs's death, handwritten notes taped to Apple Store windows praised what Apple represented ("you made me feel free," "you helped me express my individuality"), not its products.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>You can't persuade anyone of something you haven't first worked out you believe — the "$100 bill you don't have" problem from the lecture.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>4. The Private Writing Method: Freedom + Discipline</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Private writing works by combining unstructured freedom of thought with the structural discipline of a timer and a page.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 2 · Lecture 2 Part 3 (How To) · Levy, <i>Accidental Genius</i></dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Freedom: a dedicated time and space, everything else turned off, right-brain association allowed to wander. Discipline: a time limit and continuous writing so ideas leave a physical trail instead of getting lost. Source method is Mark Levy's <i>Accidental Genius</i>, tested across roughly 15 years of cohorts. Lee Iacocca's autobiography (in the packet) makes a parallel point: writing things down creates accountability to yourself.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is the actual mechanism your private writing sessions rely on — understanding why it works makes it easier to trust the process during the workshop's fast, unpolished exercises.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>5. Ten Techniques, One Process</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Five generative techniques, one refinement technique, and four advanced techniques — all aimed at getting past self-editing to what you actually think.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture 2 Part 3 (How To) · Private Writing Handouts</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Basic (5):</b> Try Easy (aim for 90%, not a breakthrough), Write Fast and Continuously (don't edit), Work Against a Limit (a timer keeps focus), Write the Way You Think ("friendly kitchen language," no explaining), Go with the Thought (improv "yes, and" — Levy's own example is marketing beef salami as a luxury product). <b>Refinement (1):</b> Redirect Your Attention — circle a question or interesting line from a prior writing and use it as the next prompt (Handout 2). <b>Advanced (4):</b> Open Up Words — redefine overused terms like "bandwidth" or "synergy" (Handout 3); Testing Assumptions — counter-intuitive what-ifs (Handout 4); Nuggets of Wisdom — agree or disagree with a quotation (Handout 5); Paper Conversations — a written dialogue with a real or imagined person (Handout 6).</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>You don't need to use all ten in your own sessions — the workshop is designed to help you find the one or two that actually generate something for you.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>6. Three Faces of Conviction</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Conviction looks different depending on the speaker and the stage, but it's recognizable across all three registers.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Speeches paired with Lecture 2 Part 1: MLK, Oprah Winfrey, Georgia Tech student speaker</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>MLK's "I Have a Dream" — the reference point for conviction at its most historically consequential. Oprah's Golden Globes remarks — conviction from someone "completely within herself, communicating from the inside out." A Georgia Tech upperclassman's freshman-convocation welcome — conviction from someone almost nobody in the audience had heard of, at an event with a tradition of being, in the lecture's own word, "boring."</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>The pairing is the argument: if conviction only mattered on the biggest stages, it wouldn't be worth five weeks of a course built around ordinary professional speaking.</dd></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-nblm" data-zone="reference" data-icon="🎧" data-nav="NotebookLM">
+        <div class="section-head"><span class="sh-emoji">🎧</span><h2>NotebookLM Prompts</h2></div>
+        <div class="copy-wrap">
+          <div class="callout">
+            <span class="callout-title">How to use these</span>
+            Upload this week's sources (both lecture transcripts, the How-To transcript, the Week 1 Packet pp. 60–83, and the handouts) to a NotebookLM notebook, then paste these three prompts in order. <b>Do not upload your own private writing</b> — it's not required reading and it's yours alone. These are for your own review only; this course doesn't allow Generative AI on graded work, and each prompt says so explicitly.
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 1 — Overall Understanding + Synthesis</strong><div class="meta-desc">Run this first. Generates a study guide, master notes, and video/audio overview guidance.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm2-1">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm2-1">Using only the Week 2 sources I've uploaded to this notebook (the lecture transcripts, the how-to workshop transcript, the Week 1 Packet pp. 60–83, and the private writing handouts), generate four outputs:
+1. Written Study Guide
+2. Written Master Notes
+3. Text-forward Video Overview guidance
+4. Audio Overview guidance
+
+Week 2 theme: Critical Thinking Through Private Writing.
+
+Use exactly these six top-level headings throughout all four outputs:
+1. Persuasion as Personal Advocacy: Problem, Solution, Conviction
+2. Why Conviction Matters More Than Ever
+3. Belief Drives Action: From Oreos to Apple
+4. The Private Writing Method: Freedom + Discipline
+5. Ten Techniques, One Process
+6. Three Faces of Conviction
+
+For the Written Study Guide: teach the week clearly in plain English using the six headings above. Explain core concepts, key terms, examples, and source connections.
+
+For the Written Master Notes: go deeper using the same six headings. Organize by concept, not source. Synthesize across both lectures, the how-to workshop, and the reading.
+
+For the Video Overview: text-forward, not decorative. Use the six-heading structure. Show readable on-screen concept names, definitions, short bullets, and key takeaway statements.
+
+For the Audio Overview: conversational, easy to listen to while walking or driving. Use the six-heading structure where it improves clarity. End with a fast verbal review checklist.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Private Writing Assignment or Persuasive Policy Speech. Do not attempt to write or simulate my private writing for me — that process has to be my own. Help me understand, organize, and review only.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 2 — Master Notes Builder</strong><div class="meta-desc">Run after Prompt 1. Goes deeper on the same six headings.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm2-2">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm2-2">Build deeper concept-first master notes for Week 2: Critical Thinking Through Private Writing.
+
+Use only the Week 2 sources in this notebook.
+
+Use exactly these six top-level headings:
+1. Persuasion as Personal Advocacy: Problem, Solution, Conviction
+2. Why Conviction Matters More Than Ever
+3. Belief Drives Action: From Oreos to Apple
+4. The Private Writing Method: Freedom + Discipline
+5. Ten Techniques, One Process
+6. Three Faces of Conviction
+
+For each section include:
+1. Plain-English definition
+2. Key terms
+3. Main source connections
+4. Useful examples
+5. Why it matters for the course
+6. How it connects to Week 3 (audience analysis and speechwriting)
+7. Risks, omissions, or misunderstandings to avoid
+8. Questions to revisit
+
+Synthesize across sources rather than summarizing one at a time.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Private Writing Assignment or Persuasive Policy Speech. Do not attempt to write or simulate my private writing for me.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 3 — Concept Check / Self-Quiz</strong><div class="meta-desc">Run last. Study-review only — not for drafting any graded work.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm2-3">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm2-3">Using only the Week 2 sources in this notebook, build a self-quiz I can use to check my own understanding of Week 2: Critical Thinking Through Private Writing.
+
+Use the same six headings as before:
+1. Persuasion as Personal Advocacy: Problem, Solution, Conviction
+2. Why Conviction Matters More Than Ever
+3. Belief Drives Action: From Oreos to Apple
+4. The Private Writing Method: Freedom + Discipline
+5. Ten Techniques, One Process
+6. Three Faces of Conviction
+
+For each heading, give me:
+1. Two short-answer questions that test whether I actually understood the concept, not just recall
+2. One question that asks me to apply the concept to an example from my own work or industry
+3. The correct answer or a strong model answer, so I can check myself
+
+Finish with three questions that connect Week 2 to what's coming in Week 3 (audience analysis and speechwriting) — the kind of question I should be able to answer before that week starts.
+
+This is for my own private review only. Do not ask me to describe or share the actual content of my private writing sessions — those stay mine alone. This course does not allow Generative AI on graded assignments — do not draft, outline, or suggest specific content for my Private Writing Assignment or Persuasive Policy Speech, even if I ask. If I ask you to help write my assignment, remind me of this rule instead.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ── Mobile chrome ── -->
+  <div class="m-backdrop" id="mBackdrop"></div>
+  <aside class="m-drawer" id="mDrawer" role="dialog" aria-label="Navigation"></aside>
+  <nav class="m-bar" id="mBar" aria-label="Quick navigation"></nav>
+
+  <div id="banner" aria-live="polite"></div>
+  <canvas id="confetti"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

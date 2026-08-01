@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 3 · Public Persuasion (MSC 482)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-week="3">
+  <div class="layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <button class="sb-collapse" id="sbCollapse" title="Hide sidebar" aria-label="Hide sidebar">‹</button>
+        <div class="sb-brand">
+          <div class="sb-course">Public Persuasion</div>
+          <div class="sb-name">🎙️ MSC 482</div>
+          <div class="sb-titleline">
+            <select class="week-select" data-week-switch aria-label="Switch week"></select>
+            <span class="sb-dash">Study Dashboard</span>
+          </div>
+        </div>
+        <div class="sb-progress" id="sbProgress"></div>
+        <div class="sb-block">
+          <div class="sb-label">Sections</div>
+          <nav class="nav-list" id="navList" aria-label="Section navigation"></nav>
+        </div>
+      </div>
+    </aside>
+    <button class="sb-show" id="sbShow" title="Show sidebar" aria-label="Show sidebar">›</button>
+
+    <!-- ── Main ── -->
+    <main class="main">
+      <div class="hero" id="hero"></div>
+
+      <section class="section-card" id="s-approach" data-zone="briefing" data-icon="🧭" data-nav="How to Approach">
+        <div class="section-head"><span class="sh-emoji">🧭</span><h2>How to Approach This Week</h2></div>
+        <div class="approach-body">
+          <p>Week 2 was about finding your conviction. Week 3 is where you start turning it into an actual speech — the biggest week of the course by item count, but almost half of it is short speech clips paired directly with a lecture. Nothing is due this week; it's pure input for the Persuasive Policy Speech you'll write in Week 5.</p>
+          <p>The two-part structure from the recap lecture is the throughline: <b>credibility first, then color.</b> You build trust before you try to be memorable — a bored, distrustful audience won't stick around for your best metaphor.</p>
+          <div class="pillar-row">
+            <div class="pillar"><h5>Credibility</h5><p>Be organized and sound organized. Be a person, not a drone. This builds authority and warmth — the two poles of trust.</p></div>
+            <div class="pillar"><h5>Color</h5><p>Vivid language, literary devices, rhetorical devices. This is what makes an already-credible speech memorable.</p></div>
+          </div>
+          <ol class="order-list">
+            <li><b>Live Discussion Session (Zoom)</b> — Monday, fixed time.</li>
+            <li><b>Week 2 Packet, pp. 1–12</b> and <b>Cook, Ch. 1–5</b> — audience fundamentals and the Elaboration Likelihood Model, cited by exact page number in Lecture 2.</li>
+            <li><b>Lecture Part 1 (Moment & Meaning)</b> → <b>Reagan's Challenger address</b> — the case study the whole "choose your meaning" idea is built on.</li>
+            <li><b>Lecture Part 2 (Building Credibility)</b> → <b>Steve Jobs at Stanford</b> — Aristotle's three appeals, then organization and conversational writing rules in action.</li>
+            <li><b>Week 2 Packet, pp. 15–33</b>, <b>Cook Ch. 9</b>, and the <b>Credibility & Color PPT</b> — the device examples the next three lectures walk through.</li>
+            <li><b>Lecture Part 3</b> → <b>Mario Cuomo</b>, <b>Lecture Part 4</b> → <b>Emma González</b>, <b>Lecture Part 5</b> → <b>Jesse Jackson</b> — vivid language and the full rhetorical-device toolkit, each paired with a speech that demonstrates it.</li>
+            <li><b>Lecture Part 6 (Recap)</b> — ties the whole week together and previews Week 4's shift to logic and emotion.</li>
+          </ol>
+          <div class="callout">
+            <span class="callout-title">Worth knowing</span>
+            Five different speeches this week, five different purposes. Reagan and Jobs are about credibility (organization, conversational tone). Cuomo, González, and Jackson are about color (metaphor, repetition, rhythm). Watching each one right where the lecture sends you — not saving them all for the end — is what makes the pairing land.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-deliv" data-zone="execution" data-icon="🎯" data-nav="Deliverables">
+        <div class="section-head"><span class="sh-emoji">🎯</span><h2>Weekly Deliverables</h2></div>
+        <div class="section-body flush" id="deliverables"></div>
+      </section>
+
+      <section class="section-card" id="s-checklist" data-zone="execution" data-icon="✅" data-nav="Checklist">
+        <div class="section-head"><span class="sh-emoji">✅</span><h2>Weekly Checklist</h2><span id="toolbar" class="head-tools"></span></div>
+        <div class="section-body flush">
+          <div id="check-wrap" class="check-wrap"></div>
+          <div id="check-cards" class="check-cards"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-ideas" data-zone="reference" data-icon="💡" data-nav="Big Ideas">
+        <div class="section-head"><span class="sh-emoji">💡</span><h2>Weekly Big Ideas</h2></div>
+        <div class="idea-grid">
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture · Reading</span>
+            <h4>1. Choosing What You Want to Say Is a Tradition, Not a Task</h4>
+            <p>Three steps from Lecture 1: it's not a task, it's a tradition (Aristotle: "only mankind was given the power of speech"); if you can't see it, you can't say it (visualize the room, the way Peggy Noonan pictured a family at the dinner table before writing for Reagan); then, and only then, choose your meaning. A speech happens at one shared moment in time — that's what makes it different from a memo.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>2. Credibility Is Built on Two Poles: Competence and Warmth</h4>
+            <p>Aristotle's three appeals — logos, pathos, ethos — reduce to logic, emotion, and trust. Credibility specifically splits into competence/authority/strength on one side and likeability/humanity/warmth on the other. Rick Perry lost the 2012 Republican primary in one on-stage moment when he couldn't name a third federal agency; Tony Hayward lost his BP job for saying "I'd like my life back" during the Gulf oil spill. Different poles, same lesson: credibility can vanish in seconds.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture · Reading</span>
+            <h4>3. Most Persuasion Happens on the Peripheral Route</h4>
+            <p>The Elaboration Likelihood Model (in the assigned reading) says audiences process messages two ways: central (careful, engaged, weighing evidence) or peripheral (fast mental shortcuts). Most real-world listening is peripheral — which is exactly why first impressions and credibility carry so much weight before anyone consciously evaluates your argument.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture</span>
+            <h4>4. Be Organized, Sound Organized, Be a Person</h4>
+            <p>Concrete rules, not abstractions: use a roadmap/preview, transitions, and a review (Steve Jobs's "I want to tell you three stories" is the textbook example). Then write conversationally — shorter words, shorter sentences, turn dependent clauses into new sentences, flag key points with a colon, and lose the jargon. Organization builds authority; conversational tone builds warmth. Together, that's credibility.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-lecture">Lecture · Reading</span>
+            <h4>5. Color Is a Toolkit, Not a Talent</h4>
+            <p>Vivid language (Churchill's "broad, sunlit uplands"), more words per square thought (Reagan's Boys of Pointe du Hoc), alliteration, metaphor (Cuomo's "tale of two cities" answering Reagan's "shining city on a hill"), tricolon, repetition (MLK's "let freedom ring"), quickened pace (FDR's Pearl Harbor address, Emma González's pause), rhetorical questions, rounded numbers, and paired lists — nine named, learnable techniques, each demonstrated in a real, famous speech.</p>
+          </div>
+          <div class="idea-card">
+            <span class="src-tag src-reading">Reading</span>
+            <h4>6. Tone Is a Choice, Independent of Content</h4>
+            <p>Cook's Chapter 9 adds a layer the lectures don't fully cover: six ways to control how words <i>sound</i>, regardless of what they say — terse and declarative (Cuomo), discursive (Georgie Anne Geyer), punchy with hard consonants (Malcolm X), soft and soothing (George H.W. Bush), breezy with contractions (Ann Richards), or formal and measured (Faulkner's Nobel acceptance, JFK's inaugural). The same idea can sound completely different depending on which register you choose.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-notes" data-zone="reference" data-icon="📝" data-nav="Master Notes">
+        <div class="section-head"><span class="sh-emoji">📝</span><h2>Master Notes</h2></div>
+        <div class="notes-block">
+          <div class="concept">
+            <h4>1. Moment & Meaning: Choosing What You Want to Say</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>A speech happens at one shared moment in time, which is what separates it from a memo — and that changes how you should write it.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture Part 1 · Reagan's Challenger address (Jan. 28, 1986)</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Three steps: (1) it's not a task, it's a tradition — Aristotle's line that only mankind was given the power of speech; (2) if you can't see it, you can't say it — visualize the room, the way Peggy Noonan (in the packet, p. 3) pictured a child in a mall, or a family clearing dishes to watch an address; (3) choose your meaning — speeches don't live in silos of "informative" vs. "persuasive," so choose freely from the full range of what you could say. Case study: after the Challenger explosion killed all seven crew members live on television, Reagan's Oval Office address (written by Noonan, delivered ~12 hours later) had to make sense of the tragedy for five different audiences at once — schoolchildren, the public, the astronauts' families, NASA, and the Soviets — with one unifying message.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>This is the mental model for approaching your own Persuasive Policy Speech: don't start with what to say — start with the room you'll be speaking into.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>2. Building Credibility: Competence + Warmth</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Credibility (ethos) has two independent poles, and losing either one is fast and often fatal to a speaker.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture Part 2 · Reading pp. 1–12 (Aristotle, Elaboration Likelihood Model) · Steve Jobs at Stanford</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd>Aristotle's <i>Rhetoric</i>: rhetoric is "the faculty of discovering the available means of persuasion in any given situation," with three appeals — logos (logic), pathos (emotion), ethos (credibility/trust). Competence/authority/strength is one pole; likeability/humanity/warmth is the other. Case studies: Rick Perry's 2012 debate "oops" moment (couldn't name the third federal agency he wanted to cut) cost him authority; BP CEO Tony Hayward's "I'd like my life back" cost him warmth. The Elaboration Likelihood Model explains why this matters so much: audiences mostly process peripherally (fast, instinctive judgments), not centrally (careful evaluation of arguments) — so credibility gets assessed almost instantly, often before the actual argument is heard.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>The professor's claim: credibility is both the most important part of public speaking <i>and</i> the easiest to fix — because it comes down to two learnable habits, covered next.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>3. Be Organized, Sound Organized, Be a Person</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Two concrete, teachable habits build both poles of credibility at once.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture Part 2 · Reading pp. 15–33 (organization + plain-English rules) · Steve Jobs at Stanford</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Be organized:</b> thesis + preview/roadmap ("today I want to tell you three stories" — Jobs), transitions/sign-posting, and a closing review. <b>Sound organized</b> = builds authority. <b>Be a person:</b> choose the more conversational word and the shorter sentence; turn dependent clauses into new sentences; flag key points conversationally (the "here's why it matters" colon trick); lose the jargon; read your draft out loud. <b>Being a person</b> = builds warmth. Both together are what the lecture calls "the foundation" — everything else (color, delivery) is built on top.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>The professor's stated claim: with just these two habits, "we can usually make a better speechwriter in about 20 minutes" — this is the highest-leverage, fastest-to-apply material in the whole course.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>4. Painting Pictures: Vivid Language and More Words Per Square Thought</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Once credibility is established, color starts with two techniques: choosing image-based words, and — counterintuitively — sometimes using <i>more</i> words, not fewer, to make one thought land.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture Part 3</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Vivid language:</b> words like "conquer," "battle," "desert," "oasis" — Churchill's radio-only "broad, sunlit uplands" and "abyss of a new Dark Age" created pictures with no visuals at all. <b>More words per square thought:</b> expand one simple idea for imagery (Reagan's "Boys of Pointe du Hoc" — the one-sentence fact "they took the cliffs" becomes a full paragraph of Rangers climbing rope ladders under fire) or for context/emphasis (restating "the test of leadership is persistence," or explaining what "34%" actually means to a room).</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Both techniques exist for the same reason: to make sure a speech never needs a slide deck to be understood — the words themselves do the showing.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>5. The Rhetorical Toolkit: Devices, Tone, and Rhythm</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>A defined set of literary and rhetorical devices, each demonstrated in a specific, famous speech — plus six tone controls from the reading that operate independently of content.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>Lecture Parts 3–5 · Cook Ch. 9 · Mario Cuomo, Emma González, Jesse Jackson speeches</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Devices:</b> alliteration ("their blood was their bond"); metaphor/analogy (Kareem Abdul-Jabbar's racism-as-dust; Cuomo's "tale of two cities" and wagon-train answering Reagan's "shining city on a hill"; Richard Devine's extended Apollo 13 metaphor for restorative justice); tricolon/rule of three (Caesar's "I came, I saw, I conquered"; Lincoln's "we cannot dedicate..."); repetition (MLK's "let freedom ring"); quicken the pace (FDR's short, repeated "last night, Japanese forces attacked..."; Emma González's repeated "would never," ending in a held silence); rhetorical questions; rounded numbers (304,356 → "more than 300,000"); pairs instead of long lists. <b>Tone (Cook Ch. 9):</b> terse/declarative (Cuomo), discursive, punchy with hard consonants (Malcolm X), soft/soothing (George H.W. Bush), breezy with contractions (Ann Richards), formal (Faulkner, JFK's inaugural).</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>"These are like hats — you try them on to see what works for you." None of these are mandatory in every speech; the point is having a full toolkit to draw from once credibility is already secure.</dd></div>
+          </div>
+          <div class="concept">
+            <h4>6. Five Speeches, Five Master Classes</h4>
+            <div class="concept-row"><dt>Core idea</dt><dd>Each assigned speech was chosen to demonstrate one specific part of this week's framework, not as a generic "great speeches" survey.</dd></div>
+            <div class="concept-row"><dt>Comes from</dt><dd>All five assigned speeches, each paired with a specific lecture part</dd></div>
+            <div class="concept-row"><dt>Key details</dt><dd><b>Reagan's Challenger address</b> (Lecture 1) — choosing meaning for multiple audiences in one moment. <b>Steve Jobs at Stanford</b> (Lecture 2) — organization and conversational credibility. <b>Mario Cuomo's 1984 DNC keynote</b> (Lecture 3) — extended metaphor answering a rival speaker's imagery. <b>Emma González</b> (Lecture 4) — quickened pace and repetition building to a held silence. <b>Jesse Jackson</b> (Lecture 5) — assigned as an open exercise: spot the alliteration, metaphor, and repetition yourself, without the lecture pointing them out first.</dd></div>
+            <div class="concept-row"><dt>Why it matters</dt><dd>Watching all five back-to-back at the end of the week (rather than only where each is first introduced) is a good way to hear the whole toolkit in five different real voices before Week 5's recap ties them together.</dd></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="s-nblm" data-zone="reference" data-icon="🎧" data-nav="NotebookLM">
+        <div class="section-head"><span class="sh-emoji">🎧</span><h2>NotebookLM Prompts</h2></div>
+        <div class="copy-wrap">
+          <div class="callout">
+            <span class="callout-title">How to use these</span>
+            Upload this week's sources (all six lecture transcripts, Cook Ch. 1–5 &amp; 9, the Week 2 Packet pp. 1–33, and the Credibility &amp; Color PowerPoint) to a NotebookLM notebook, then paste these three prompts in order. For your own review only — this course doesn't allow Generative AI on graded work.
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 1 — Overall Understanding + Synthesis</strong><div class="meta-desc">Run this first. Generates a study guide, master notes, and video/audio overview guidance.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm3-1">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm3-1">Using only the Week 3 sources I've uploaded to this notebook (all six lecture transcripts, Cook Chapters 1–5 and 9, the Week 2 Packet pp. 1–33, and the Credibility & Color PowerPoint), generate four outputs:
+1. Written Study Guide
+2. Written Master Notes
+3. Text-forward Video Overview guidance
+4. Audio Overview guidance
+
+Week 3 theme: Meaning & Audiences, Credibility & Color.
+
+Use exactly these six top-level headings throughout all four outputs:
+1. Moment & Meaning: Choosing What You Want to Say
+2. Building Credibility: Competence + Warmth
+3. Be Organized, Sound Organized, Be a Person
+4. Painting Pictures: Vivid Language and More Words Per Square Thought
+5. The Rhetorical Toolkit: Devices, Tone, and Rhythm
+6. Five Speeches, Five Master Classes
+
+For the Written Study Guide: teach the week clearly in plain English using the six headings above. Explain core concepts, key terms, examples, and which assigned speech demonstrates which technique.
+
+For the Written Master Notes: go deeper using the same six headings. Organize by concept, not source. Synthesize across all six lectures and the reading.
+
+For the Video Overview: text-forward, not decorative. Use the six-heading structure. Show readable on-screen concept names, definitions, short bullets, and key takeaway statements.
+
+For the Audio Overview: conversational, easy to listen to while walking or driving. Use the six-heading structure where it improves clarity. End with a fast verbal review checklist.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Persuasive Policy Speech. Help me understand, organize, and review only.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 2 — Master Notes Builder</strong><div class="meta-desc">Run after Prompt 1. Goes deeper on the same six headings.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm3-2">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm3-2">Build deeper concept-first master notes for Week 3: Meaning & Audiences, Credibility & Color.
+
+Use only the Week 3 sources in this notebook.
+
+Use exactly these six top-level headings:
+1. Moment & Meaning: Choosing What You Want to Say
+2. Building Credibility: Competence + Warmth
+3. Be Organized, Sound Organized, Be a Person
+4. Painting Pictures: Vivid Language and More Words Per Square Thought
+5. The Rhetorical Toolkit: Devices, Tone, and Rhythm
+6. Five Speeches, Five Master Classes
+
+For each section include:
+1. Plain-English definition
+2. Key terms
+3. Main source connections, including which assigned speech (Reagan, Jobs, Cuomo, González, Jackson) demonstrates it
+4. Useful examples
+5. Why it matters for the course
+6. How it applies to my own Persuasive Policy Speech (due Week 5)
+7. Risks, omissions, or misunderstandings to avoid
+8. Questions to revisit
+
+Synthesize across sources rather than summarizing one at a time.
+
+This course does not allow Generative AI on graded assignments. Do not draft any part of my Persuasive Policy Speech.</pre>
+          </div>
+
+          <div class="copybox">
+            <div class="copyhead">
+              <div class="copyhead-meta"><strong>Prompt 3 — Concept Check / Self-Quiz</strong><div class="meta-desc">Run last. Study-review only — not for drafting any graded work.</div></div>
+              <div class="copyhead-actions"><button class="btn sm copy-btn" data-copy="nlm3-3">Copy</button></div>
+            </div>
+            <pre class="copybody" id="nlm3-3">Using only the Week 3 sources in this notebook, build a self-quiz I can use to check my own understanding of Week 3: Meaning & Audiences, Credibility & Color.
+
+Use the same six headings as before:
+1. Moment & Meaning: Choosing What You Want to Say
+2. Building Credibility: Competence + Warmth
+3. Be Organized, Sound Organized, Be a Person
+4. Painting Pictures: Vivid Language and More Words Per Square Thought
+5. The Rhetorical Toolkit: Devices, Tone, and Rhythm
+6. Five Speeches, Five Master Classes
+
+For each heading, give me:
+1. Two short-answer questions that test whether I actually understood the concept, not just recall
+2. One question that asks me to identify which assigned speech best demonstrates the concept, and why
+3. The correct answer or a strong model answer, so I can check myself
+
+Finish with three questions that connect Week 3 to what's coming in Week 4 (logic and emotion) — the kind of question I should be able to answer before that week starts.
+
+This is for my own private review only. This course does not allow Generative AI on graded assignments — do not draft, outline, or suggest specific content for my Persuasive Policy Speech, even if I ask. If I ask you to help write my speech, remind me of this rule instead.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ── Mobile chrome ── -->
+  <div class="m-backdrop" id="mBackdrop"></div>
+  <aside class="m-drawer" id="mDrawer" role="dialog" aria-label="Navigation"></aside>
+  <nav class="m-bar" id="mBar" aria-label="Quick navigation"></nav>
+
+  <div id="banner" aria-live="polite"></div>
+  <canvas id="confetti"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
