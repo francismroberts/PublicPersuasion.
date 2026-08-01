@@ -84,6 +84,7 @@
     WEEK = Number(w);
     ITEMS = window.COURSE.items.filter(i => i.week === WEEK);
     ITEMS.forEach((i, n) => SEQ[i.id] = n + 1);
+    pruneEmptySections();
     buildChrome();
     hydrateLocal();
     renderAll();
@@ -99,6 +100,9 @@
     return o;
   }
   function sections() { return $$('.section-card').map(s => ({ id: s.id, zone: s.dataset.zone, icon: s.dataset.icon || '•', nav: s.dataset.nav || s.id })); }
+  function pruneEmptySections() {
+    if (!ITEMS.some(i => i.type === 'assignment' && i.required)) $('#s-deliv')?.remove();
+  }
 
   function navHTML() {
     let html = '';
@@ -301,6 +305,19 @@
       $$('input.ck', cc).forEach(cb => cb.addEventListener('change', () => toggle(cb.dataset.id, cb.checked)));
     }
     updateProgress();
+    renderApproach();
+  }
+
+  function renderApproach() {
+    $$('.order-list').forEach(ol => {
+      let first = true;
+      $$('li[data-items]', ol).forEach(li => {
+        const done = li.dataset.items.split(/\s+/).every(id => CHECKED.has(id));
+        li.classList.toggle('approach-done', done);
+        li.classList.toggle('approach-first', !done && first);
+        if (!done) first = false;
+      });
+    });
   }
 
   function taskInner(i) {
@@ -334,20 +351,11 @@
   function renderDeliverables() {
     const host = $('#deliverables'); if (!host) return;
     const graded = ITEMS.filter(i => i.type === 'assignment' && i.required);
-    if (graded.length) {
-      let html = '<table class="deliv-table"><thead><tr><th>Deliverable</th><th>Points</th><th>Your target</th><th>Actual due</th></tr></thead><tbody>';
-      graded.forEach(i => { const real = parseDue(i.due), target = new Date(real.getTime() - DAY);
-        html += '<tr><td>' + (i.url ? smartLink(i.url, i.label) : esc(i.label)) + '</td>' +
-          '<td class="deliv-pts">' + esc((i.note || '').split('·')[0].trim() || '—') + '</td><td>' + fmtDay(target) + '</td><td>' + fmtDateTime(real) + '</td></tr>'; });
-      host.innerHTML = html + '</tbody></table>'; return;
-    }
-    const deadlines = ITEMS.filter(i => i.dueType !== 'event').map(i => parseDue(i.due)).sort((a, b) => b - a);
-    const soft = deadlines[0];
-    const nextG = window.COURSE.items.find(i => i.type === 'assignment' && i.required && parseDue(i.due) > new Date());
-    let msg = '<strong>No graded work due this week.</strong> ';
-    if (soft) msg += 'Aim to finish everything by <strong>' + fmtDay(new Date(soft.getTime() - DAY)) + '</strong> (course soft deadline ' + fmtDay(soft) + '). ';
-    if (nextG) msg += 'First graded deliverable: ' + (nextG.url ? '<a href="' + esc(nextG.url) + '" target="_blank" rel="noopener">' + esc(nextG.label) + '</a>' : esc(nextG.label)) + ' — ' + fmtDay(parseDue(nextG.due)) + ' (Week ' + nextG.week + ').';
-    host.innerHTML = '<div class="deliv-empty">' + msg + '</div>';
+    let html = '<table class="deliv-table"><thead><tr><th>Deliverable</th><th>Points</th><th>Your target</th><th>Actual due</th></tr></thead><tbody>';
+    graded.forEach(i => { const real = parseDue(i.due), target = new Date(real.getTime() - DAY);
+      html += '<tr><td>' + (i.url ? smartLink(i.url, i.label) : esc(i.label)) + '</td>' +
+        '<td class="deliv-pts">' + esc((i.note || '').split('·')[0].trim() || '—') + '</td><td>' + fmtDay(target) + '</td><td>' + fmtDateTime(real) + '</td></tr>'; });
+    host.innerHTML = html + '</tbody></table>';
   }
 
   /* ── Toggle + progress ──────────────────────────────────────────────────── */
