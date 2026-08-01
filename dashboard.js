@@ -99,7 +99,7 @@
     // hero
     const hero = $('#hero');
     if (hero) hero.innerHTML =
-      '<div class="hero-top"><div class="hero-week"><select class="week-select" data-week-switch aria-label="Switch week">' + weekOptions() + '</select><span class="hero-dash">Study Dashboard</span></div>' +
+      '<div class="hero-top"><div class="hero-week"><select class="week-select" data-week-switch aria-label="Switch week">' + weekOptions() + '</select><span class="hero-dash">Francis Roberts Study Dashboard</span></div>' +
       '<div class="hero-eyebrow">Week ' + String(WEEK).padStart(2, '0') + '</div></div>' +
       '<h1 class="hero-title">' + esc(meta.title) + '</h1>' +
       '<p class="hero-sub">' + esc(SUB) + ' · ' + esc(meta.range) + '</p>' +
@@ -428,7 +428,7 @@
     const nl = $('#navList'); if (nl) nl.innerHTML = navEntriesHTML();
     const hero = $('#hero');
     if (hero) hero.innerHTML =
-      '<div class="hero-top"><div class="hero-week"><select class="week-select" data-week-switch aria-label="Switch week">' + weekOptions() + '</select><span class="hero-dash">Study Dashboard</span></div>' +
+      '<div class="hero-top"><div class="hero-week"><select class="week-select" data-week-switch aria-label="Switch week">' + weekOptions() + '</select><span class="hero-dash">Francis Roberts Study Dashboard</span></div>' +
       '<div class="hero-eyebrow">Course Home</div></div>' +
       '<h1 class="hero-title">Public Persuasion</h1>' +
       '<p class="hero-sub">' + esc(SUB) + ' \u00b7 Jul 26 \u2013 Aug 29</p>' +

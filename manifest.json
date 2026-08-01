@@ -1,0 +1,13 @@
+{
+  "name": "Public Persuasion · Study Dashboard",
+  "short_name": "Public Persuasion",
+  "description": "Study dashboard for Northwestern's Public Persuasion (MSC 482) — schedule, checklist, and study guides across all 5 weeks.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#faf9fc",
+  "theme_color": "#4e2a84",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
