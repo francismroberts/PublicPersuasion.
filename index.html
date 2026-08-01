@@ -8,7 +8,7 @@
       try {
         if (sessionStorage.getItem('msc482:homeNav')) { sessionStorage.removeItem('msc482:homeNav'); return; }
         var last = localStorage.getItem('msc482:lastPage');
-        var valid = ['week1.html', 'week2.html', 'week3.html', 'week4.html', 'week5.html'];
+        var valid = ['week1.html', 'week2.html', 'week3.html', 'week4.html', 'week5.html', 'framework.html'];
         if (last && valid.indexOf(last) !== -1) location.replace(last);
       } catch (e) {}
     })();
