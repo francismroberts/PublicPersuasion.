@@ -23,7 +23,7 @@
   const lsSet = (k, v) => { try { localStorage.setItem(LS + k, v); } catch (e) {} };
 
   // ── Page memory: remember the last page visited, so index.html can return here ──
-  const PAGES = ['week1.html', 'week2.html', 'week3.html', 'week4.html', 'week5.html', 'framework.html'];
+  const PAGES = ['week1.html', 'week2.html', 'week3.html', 'week4.html', 'week5.html'];
   (function rememberThisPage() {
     const here = location.pathname.split('/').pop() || 'index.html';
     if (here === 'index.html' || PAGES.includes(here)) lsSet('lastPage', here);
@@ -97,7 +97,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     if (!window.COURSE) return;
     if ('hub' in document.body.dataset) return initHub();
-    if ('framework' in document.body.dataset) return initFramework();
     const w = document.body.dataset.week;
     if (!w) return;
     WEEK = Number(w);
@@ -116,7 +115,6 @@
   function weekOptions() {
     let o = '<option value="index.html">🏠 Home</option>';
     for (let n = 1; n <= 5; n++) o += '<option value="week' + n + '.html"' + (n === WEEK ? ' selected' : '') + '>Week ' + n + '</option>';
-    o += '<option value="framework.html"' + (WEEK === 'framework' ? ' selected' : '') + '>🧭 Framework</option>';
     return o;
   }
   function sections() { return $$('.section-card').map(s => ({ id: s.id, zone: s.dataset.zone, icon: s.dataset.icon || '•', nav: s.dataset.nav || s.id })); }
@@ -185,43 +183,6 @@
       '<button class="m-bar-btn" id="mbMenu"><span class="m-bar-ic">☰</span><span class="m-bar-lb">Menu</span></button>' +
       '<button class="m-bar-btn" id="mbList"><span class="m-bar-ic">📌</span><span class="m-bar-lb">Checklist</span></button>' +
       '<button class="m-bar-btn" id="mbDone"><span class="m-bar-ic">☑️</span><span class="m-bar-lb">Done</span></button>' +
-      '<button class="m-bar-btn" id="mbTop"><span class="m-bar-ic">⬆️</span><span class="m-bar-lb">Top</span></button>';
-
-    wire(); applyHidden(); applyOrder(); initDrag();
-  }
-
-  /* ── Standalone reference page (framework.html) ─────────────────────────── */
-  function initFramework() {
-    WEEK = 'framework';
-    buildFrameworkChrome();
-  }
-
-  function buildFrameworkChrome() {
-    $$('.week-select').forEach(sel => sel.innerHTML = weekOptions());
-    const sbp = $('#sbProgress');
-    if (sbp) sbp.innerHTML =
-      '<div class="sbp-top"><span>Reference material</span></div>' +
-      '<div class="sbp-time">No checklist here — see <a href="index.html">Home</a> for weekly progress.</div>';
-    const nl = $('#navList'); if (nl) nl.innerHTML = navEntriesHTML();
-
-    const hero = $('#hero');
-    if (hero) hero.innerHTML =
-      '<div class="hero-top"><div class="hero-week"><select class="week-select" data-week-switch aria-label="Switch week">' + weekOptions() + '</select><span class="hero-dash">Francis Roberts Study Dashboard</span></div>' +
-      '<div class="hero-eyebrow">Reference Tool</div></div>' +
-      '<h1 class="hero-title">Speech Analysis Framework</h1>' +
-      '<p class="hero-sub">' + esc(SUB) + ' · A structured way to break down any speech before you write your own.</p>' +
-      '<div class="pill-row">' +
-      '<span class="pill pill-accent">🧭 6 lenses</span>' +
-      '<span class="pill pill-sage">🗓️ Built from Weeks 2–5</span>' +
-      '<span class="pill pill-amber">🎤 Use on any speech — assigned or your own draft</span></div>';
-
-    const dr = $('#mDrawer');
-    if (dr) dr.innerHTML =
-      '<div class="m-drawer-head"><div class="sb-name">🎙️ MSC 482</div><button class="m-close" id="mClose" aria-label="Close">×</button></div>' +
-      '<div class="sb-label">On this page</div><nav class="nav-list">' + navHTML() + '</nav>';
-    const bar = $('#mBar');
-    if (bar) bar.innerHTML =
-      '<button class="m-bar-btn" id="mbMenu"><span class="m-bar-ic">☰</span><span class="m-bar-lb">Menu</span></button>' +
       '<button class="m-bar-btn" id="mbTop"><span class="m-bar-ic">⬆️</span><span class="m-bar-lb">Top</span></button>';
 
     wire(); applyHidden(); applyOrder(); initDrag();
@@ -512,8 +473,6 @@
   const HUB = new Set();
   const WEEK_BOUNDS = { 1: ['2026-07-26','2026-08-01'], 2: ['2026-08-02','2026-08-08'], 3: ['2026-08-09','2026-08-15'], 4: ['2026-08-16','2026-08-22'], 5: ['2026-08-23','2026-08-29'] };
   const MILESTONE_SHORT = { 'w1-live1': 'Course Launch', 'w2-asg1': 'Private Writing', 'w3-live1': 'Live Discussion (Wk 3)', 'w5-live1': 'Live Discussion (Wk 5)', 'w5-asg1': 'Speech script', 'w5-asg2': 'Speech video' };
-  const FRAMEWORK_URL = 'framework.html';
-  const FRAMEWORK_LIVE = true;
 
   function initHub() {
     buildHubChrome();
@@ -559,6 +518,7 @@
     const bd = $('#mBackdrop'); [['#mbMenu', openDrawer], ['#mClose', closeDrawer]].forEach(([s, f]) => { const e = $(s); if (e) e.addEventListener('click', f); }); if (bd) bd.addEventListener('click', closeDrawer);
     $('#mbTop')?.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
     $('#hubPill')?.addEventListener('click', () => $('#s-weeks')?.scrollIntoView({ behavior: 'smooth' }));
+    $('#hubPinned')?.addEventListener('click', e => { if (!e.target.closest('#pinFrameworkLink')) return; e.preventDefault(); $('#s-framework')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     if ('IntersectionObserver' in window) { const obs = new IntersectionObserver(ents => ents.forEach(en => { if (en.isIntersecting) $$('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.nav === en.target.id)); }), { rootMargin: '-20% 0px -70% 0px' }); $$('.section-card').forEach(s => obs.observe(s)); }
   }
 
@@ -595,9 +555,7 @@
       '<div class="pin-real">Text due Wed Aug 26 \u00b7 Video due Thu Aug 27 \u00b7 5:00 p.m. CT</div>' +
       '<div class="pin-links"><a href="' + esc(sp1.url) + '" target="_blank" rel="noopener">' + (sp1Done ? '\u2713 ' : '') + 'Part 1 \u2014 script</a><a href="' + esc(sp2.url) + '" target="_blank" rel="noopener">' + (sp2Done ? '\u2713 ' : '') + 'Part 2 \u2014 video</a></div></div>';
 
-    const fwCard = FRAMEWORK_LIVE
-      ? '<a class="pin-card pin-framework" href="' + FRAMEWORK_URL + '"><div class="pin-top"><span class="pin-badge">\ud83e\udded Speech Analysis Framework</span></div><div class="pin-real">A structured way to break down any speech before you write your own.</div></a>'
-      : '<div class="pin-card pin-framework pin-soon"><div class="pin-top"><span class="pin-badge">\ud83e\udded Speech Analysis Framework</span><span class="pin-count">coming soon</span></div><div class="pin-real">Will link here once the standalone framework page is built.</div></div>';
+    const fwCard = '<a class="pin-card pin-framework" href="#s-framework" id="pinFrameworkLink"><div class="pin-top"><span class="pin-badge">\ud83e\udded Speech Analysis Framework</span></div><div class="pin-real">A structured way to break down any speech before you write your own.</div></a>';
 
     host.innerHTML = pwCard + spCard + fwCard;
   }
