@@ -64,6 +64,24 @@
   const fmtDateTime = dt => dt.toLocaleString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
   const fmtDur = m => { if (!m) return '—'; const h = Math.floor(m / 60), r = m % 60; return h ? (r ? `${h}h ${r}m` : `${h}h`) : `${m}m`; };
 
+  // Traffic-light gradient (red -> green) used to color progress bars as they fill.
+  const PROGRESS_STOPS = [[0, 204, 102, 85], [10, 210, 120, 80], [20, 214, 140, 80], [30, 218, 160, 85], [40, 220, 185, 90], [50, 210, 200, 100], [60, 190, 205, 105], [70, 160, 200, 105], [80, 120, 185, 100], [90, 80, 165, 90], [100, 50, 140, 75]];
+  function progressColor(p) {
+    let r = PROGRESS_STOPS[0][1], g = PROGRESS_STOPS[0][2], b = PROGRESS_STOPS[0][3];
+    for (let i = 0; i < PROGRESS_STOPS.length - 1; i++) {
+      const [t0, r0, g0, b0] = PROGRESS_STOPS[i];
+      const [t1, r1, g1, b1] = PROGRESS_STOPS[i + 1];
+      if (p >= t0 && p <= t1) { const ratio = (p - t0) / (t1 - t0); r = Math.round(r0 + (r1 - r0) * ratio); g = Math.round(g0 + (g1 - g0) * ratio); b = Math.round(b0 + (b1 - b0) * ratio); break; }
+      else if (p > t1) { r = r1; g = g1; b = b1; }
+    }
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  }
+  function colorProgressBar(fillId, pctId, pct) {
+    const color = pct > 0 ? progressColor(pct) : '';
+    const fill = $('#' + fillId); if (fill) fill.style.background = color;
+    const pctEl = $('#' + pctId); if (pctEl) pctEl.style.color = color;
+  }
+
   const TYPE_EMOJI = { live: '💬', reading: '📖', lecture: '🎥', speech: '🎤', resource: '📄', assignment: '✏️' };
   const MODE = { desk: { e: '🖥️', c: 'mode-desk', t: 'Desk work' }, move: { e: '🏎️', c: 'mode-move', t: 'Move-friendly' }, flex: { e: '🔁', c: 'mode-flex', t: 'Flexible' } };
   const GROUP_MODES = ['type', 'date', 'effort', 'material', 'none'];
@@ -375,7 +393,7 @@
     const totalMin = req.reduce((a, i) => a + (i.effort || 0), 0);
     const set = (id, v) => { const e = $('#' + id); if (e) e.textContent = v; };
     const wid = (id, v) => { const e = $('#' + id); if (e) e.style.width = v; };
-    set('sbDone', done); set('sbTotal', total); set('sbPct', pct + '%'); wid('sbFill', pct + '%');
+    set('sbDone', done); set('sbTotal', total); set('sbPct', pct + '%'); wid('sbFill', pct + '%'); colorProgressBar('sbFill', 'sbPct', pct);
     set('sbTime', pct === 100 ? 'All done · ' + fmtDur(totalMin) + ' total' : '≈ ' + fmtDur(remain) + ' left');
     set('pillProgText', done + ' of ' + total + ' done'); wid('pillProgFill', pct + '%');
     set('pillEffort', '⏱ ~' + fmtDur(totalMin) + ' this week');
@@ -588,7 +606,7 @@
     const totalMin = all.reduce((a, i) => a + (i.effort || 0), 0);
     const set = (id, v) => { const e = $('#' + id); if (e) e.textContent = v; };
     const wid = (id, v) => { const e = $('#' + id); if (e) e.style.width = v; };
-    set('hubDone', done); set('hubTotal', total); set('hubPct', pct + '%'); wid('hubFill', pct + '%');
+    set('hubDone', done); set('hubTotal', total); set('hubPct', pct + '%'); wid('hubFill', pct + '%'); colorProgressBar('hubFill', 'hubPct', pct);
     set('hubTime', pct === 100 ? 'Course complete \ud83c\udf89' : '\u2248 ' + fmtDur(remain) + ' of ' + fmtDur(totalMin) + ' left');
     set('hubPillText', done + ' of ' + total + ' done'); wid('hubPillFill', pct + '%');
     set('hubTimePill', '\u23f1 ~' + fmtDur(totalMin) + ' total');
