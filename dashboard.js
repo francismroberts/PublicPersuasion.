@@ -147,7 +147,8 @@
       '<span class="pill pill-accent" id="pillTarget">🎯 —</span>' +
       '<span class="pill pill-prog" id="pillProg" title="Jump to checklist"><span class="pill-prog-track"><span class="pill-prog-fill" id="pillProgFill"></span></span> <span id="pillProgText">0 of 0</span></span>' +
       '<span class="pill pill-next" id="pillNext" title="Jump to next task">↓ <span id="pillNextText">…</span></span>' +
-      '<span class="pill pill-amber" id="pillEffort">⏱ —</span></div>';
+      '<span class="pill pill-amber" id="pillEffort">⏱ —</span>' +
+      '<span class="pill pill-sage" id="pillRemain">⏳ —</span></div>';
 
     // group toggle (in checklist head)
     const tb = $('#toolbar');
@@ -378,6 +379,7 @@
     set('sbTime', pct === 100 ? 'All done · ' + fmtDur(totalMin) + ' total' : '≈ ' + fmtDur(remain) + ' left');
     set('pillProgText', done + ' of ' + total + ' done'); wid('pillProgFill', pct + '%');
     set('pillEffort', '⏱ ~' + fmtDur(totalMin) + ' this week');
+    set('pillRemain', remain ? '⏳ ~' + fmtDur(remain) + ' left' : '✅ All done');
     const nx = req.find(i => !CHECKED.has(i.id));
     set('pillNextText', nx ? nx.label.replace(/ —.*$/, '') : 'All done 🎉');
     // target pill
@@ -479,7 +481,8 @@
       '<div class="pill-row">' +
       '<span class="pill pill-prog" id="hubPill" title="Jump to weeks"><span class="pill-prog-track"><span class="pill-prog-fill" id="hubPillFill"></span></span> <span id="hubPillText">0 of 0</span></span>' +
       '<span class="pill pill-accent" id="hubNext">\u23f3 \u2014</span>' +
-      '<span class="pill pill-amber" id="hubTimePill">\u23f1 \u2014</span></div>';
+      '<span class="pill pill-amber" id="hubTimePill">\u23f1 \u2014</span>' +
+      '<span class="pill pill-sage" id="hubRemainPill">\u23f3 \u2014</span></div>';
     const dr = $('#mDrawer');
     if (dr) dr.innerHTML = '<div class="m-drawer-head"><div class="sb-name">\ud83c\udf99\ufe0f MSC 482</div><button class="m-close" id="mClose" aria-label="Close">\u00d7</button></div><div class="sb-label">On this page</div><nav class="nav-list">' + navHTML() + '</nav>';
     const bar = $('#mBar');
@@ -589,6 +592,7 @@
     set('hubTime', pct === 100 ? 'Course complete \ud83c\udf89' : '\u2248 ' + fmtDur(remain) + ' of ' + fmtDur(totalMin) + ' left');
     set('hubPillText', done + ' of ' + total + ' done'); wid('hubPillFill', pct + '%');
     set('hubTimePill', '\u23f1 ~' + fmtDur(totalMin) + ' total');
+    set('hubRemainPill', remain ? '\u23f3 ~' + fmtDur(remain) + ' left' : '\u2705 All done');
     const now = new Date();
     const up = window.COURSE.items.filter(i => i.required && (i.type === 'assignment' || i.type === 'live') && parseDue(i.due) >= now).sort((a, b) => parseDue(a.due) - parseDue(b.due))[0];
     const short = up ? (MILESTONE_SHORT[up.id] || up.label.split('\u2014')[0].trim()) : '';
