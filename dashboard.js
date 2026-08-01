@@ -481,7 +481,8 @@
       '<div class="pill-row">' +
       '<span class="pill pill-prog" id="hubPill" title="Jump to weeks"><span class="pill-prog-track"><span class="pill-prog-fill" id="hubPillFill"></span></span> <span id="hubPillText">0 of 0</span></span>' +
       '<span class="pill pill-accent" id="hubNext">\u23f3 \u2014</span>' +
-      '<span class="pill pill-amber" id="hubTimePill">\u23f1 \u2014</span></div>';
+      '<span class="pill pill-amber" id="hubTimePill">\u23f1 \u2014</span>' +
+      '<span class="pill pill-sage" id="hubRemainPill">\u23f3 \u2014</span></div>';
     const dr = $('#mDrawer');
     if (dr) dr.innerHTML = '<div class="m-drawer-head"><div class="sb-name">\ud83c\udf99\ufe0f MSC 482</div><button class="m-close" id="mClose" aria-label="Close">\u00d7</button></div><div class="sb-label">On this page</div><nav class="nav-list">' + navHTML() + '</nav>';
     const bar = $('#mBar');
@@ -591,6 +592,7 @@
     set('hubTime', pct === 100 ? 'Course complete \ud83c\udf89' : '\u2248 ' + fmtDur(remain) + ' of ' + fmtDur(totalMin) + ' left');
     set('hubPillText', done + ' of ' + total + ' done'); wid('hubPillFill', pct + '%');
     set('hubTimePill', '\u23f1 ~' + fmtDur(totalMin) + ' total');
+    set('hubRemainPill', remain ? '\u23f3 ~' + fmtDur(remain) + ' left' : '\u2705 All done');
     const now = new Date();
     const up = window.COURSE.items.filter(i => i.required && (i.type === 'assignment' || i.type === 'live') && parseDue(i.due) >= now).sort((a, b) => parseDue(a.due) - parseDue(b.due))[0];
     const short = up ? (MILESTONE_SHORT[up.id] || up.label.split('\u2014')[0].trim()) : '';
