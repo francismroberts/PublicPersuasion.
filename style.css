@@ -143,8 +143,6 @@ body.sb-hidden .sb-show { display:block; }
 .section-head .phase-tag + .head-tools,.section-head .head-tools:not(:last-child){margin-left:10px;}
 
 /* ── Deliverables ───────────────────────────────────────────────────────── */
-.deliv-empty { padding:16px 20px; font-size:13.5px; color:var(--ink2); line-height:1.55; }
-.deliv-empty a { font-weight:600; }
 .deliv-table { width:100%; border-collapse:collapse; font-size:13.5px; }
 .deliv-table th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted);
   font-weight:600; padding:10px 20px; background:var(--surface2); }
@@ -292,6 +290,8 @@ a.pin-card:hover { transform:translateY(-1px); box-shadow:var(--shadow-md); text
 .order-list { list-style:none; margin:14px 0 0; padding:0; counter-reset:ord; }
 .order-list li { counter-increment:ord; position:relative; padding:8px 0 8px 32px; font-size:13px; color:var(--ink2); line-height:1.5; border-top:1px solid var(--line); }
 .order-list li:first-child { border-top:0; }
+.order-list li.approach-done { display:none; }
+.order-list li.approach-first { border-top:0; }
 .order-list li::before { content:counter(ord); position:absolute; left:0; top:8px; width:22px; height:22px; border-radius:50%; background:var(--accent); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
 .order-list b { color:var(--ink); }
 
