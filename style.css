@@ -122,6 +122,7 @@ body.sb-hidden .sb-show { display:block; }
   background:var(--surface); border:1px solid var(--line2); border-radius:99px; padding:5px 12px; }
 .pill-accent { background:var(--accent-light); border-color:var(--accent-mid); color:var(--accent-deep); }
 .pill-amber { background:var(--amber-light); border-color:var(--amber-mid); color:var(--amber); }
+.pill-sage { background:var(--sage-light); border-color:var(--sage); color:var(--sage); }
 .pill-next { cursor:pointer; } .pill-next:hover { border-color:var(--accent); }
 .pill-prog { cursor:pointer; }
 .pill-prog-track { width:34px; height:6px; border-radius:99px; background:var(--surface3); overflow:hidden; }

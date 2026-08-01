@@ -147,7 +147,8 @@
       '<span class="pill pill-accent" id="pillTarget">🎯 —</span>' +
       '<span class="pill pill-prog" id="pillProg" title="Jump to checklist"><span class="pill-prog-track"><span class="pill-prog-fill" id="pillProgFill"></span></span> <span id="pillProgText">0 of 0</span></span>' +
       '<span class="pill pill-next" id="pillNext" title="Jump to next task">↓ <span id="pillNextText">…</span></span>' +
-      '<span class="pill pill-amber" id="pillEffort">⏱ —</span></div>';
+      '<span class="pill pill-amber" id="pillEffort">⏱ —</span>' +
+      '<span class="pill pill-sage" id="pillRemain">⏳ —</span></div>';
 
     // group toggle (in checklist head)
     const tb = $('#toolbar');
@@ -378,6 +379,7 @@
     set('sbTime', pct === 100 ? 'All done · ' + fmtDur(totalMin) + ' total' : '≈ ' + fmtDur(remain) + ' left');
     set('pillProgText', done + ' of ' + total + ' done'); wid('pillProgFill', pct + '%');
     set('pillEffort', '⏱ ~' + fmtDur(totalMin) + ' this week');
+    set('pillRemain', remain ? '⏳ ~' + fmtDur(remain) + ' left' : '✅ All done');
     const nx = req.find(i => !CHECKED.has(i.id));
     set('pillNextText', nx ? nx.label.replace(/ —.*$/, '') : 'All done 🎉');
     // target pill
