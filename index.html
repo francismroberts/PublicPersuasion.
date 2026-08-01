@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    // Return to the last week visited, unless Home was chosen on purpose from the dropdown.
+    (function () {
+      try {
+        if (sessionStorage.getItem('msc482:homeNav')) { sessionStorage.removeItem('msc482:homeNav'); return; }
+        var last = localStorage.getItem('msc482:lastPage');
+        var valid = ['week1.html', 'week2.html', 'week3.html', 'week4.html', 'week5.html'];
+        if (last && valid.indexOf(last) !== -1) location.replace(last);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Public Persuasion · Study Dashboard</title>
   <meta name="description" content="Study dashboard for Northwestern's Public Persuasion (MSC 482) — course-wide schedule, pinned deadlines, and progress across all 5 weeks.">

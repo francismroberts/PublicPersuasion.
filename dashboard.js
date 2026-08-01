@@ -22,6 +22,42 @@
   const lsGet = k => { try { return localStorage.getItem(LS + k); } catch (e) { return null; } };
   const lsSet = (k, v) => { try { localStorage.setItem(LS + k, v); } catch (e) {} };
 
+  // ── Page memory: remember the last page visited, so index.html can return here ──
+  const PAGES = ['week1.html', 'week2.html', 'week3.html', 'week4.html', 'week5.html'];
+  (function rememberThisPage() {
+    const here = location.pathname.split('/').pop() || 'index.html';
+    if (here === 'index.html' || PAGES.includes(here)) lsSet('lastPage', here);
+  })();
+
+  // ── Smart links: Canvas items try the Canvas app first ──
+  // (Drive reading links stay as normal /view URLs — PDF Expert's own Drive connector,
+  //  set up inside the app, is what keeps annotations synced back to Drive. A rewritten
+  //  "direct download" URL would open a disconnected local copy instead, which defeats that.)
+  function smartLink(url, label) {
+    const safeLabel = esc(label);
+    if (url.indexOf('canvas.northwestern.edu') !== -1) {
+      const appUrl = url.replace('https://canvas.northwestern.edu/', 'canvas-courses://canvas.northwestern.edu/');
+      return '<a href="' + esc(url) + '" target="_blank" rel="noopener" data-canvas-app="' + esc(appUrl) + '">' + safeLabel + '</a>';
+    }
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + safeLabel + '</a>';
+  }
+  // Try the Canvas app; if it hasn't taken over the screen shortly after, fall back to the web link (same tab —
+  // a delayed window.open() gets popup-blocked on mobile Safari, so same-tab fallback is the reliable option).
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[data-canvas-app]');
+    if (!a) return;
+    e.preventDefault();
+    const httpsUrl = a.href, appUrl = a.getAttribute('data-canvas-app');
+    let landedElsewhere = false;
+    const onHide = () => { landedElsewhere = true; };
+    document.addEventListener('visibilitychange', onHide, { once: true });
+    setTimeout(() => {
+      document.removeEventListener('visibilitychange', onHide);
+      if (!landedElsewhere) window.location.href = httpsUrl;
+    }, 1200);
+    window.location.href = appUrl;
+  });
+
   const DAY = 86400000;
   const parseDue = s => { if (/^\d{4}-\d{2}-\d{2}$/.test(s)) { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); } return new Date(s); };
   const fmtDay = dt => dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
@@ -130,7 +166,7 @@
   }
 
   function wire() {
-    $$('[data-week-switch]').forEach(sel => sel.addEventListener('change', () => { if (sel.value) location.href = sel.value; }));
+    $$('[data-week-switch]').forEach(sel => sel.addEventListener('change', () => { if (!sel.value) return; if (sel.value === 'index.html') { try { sessionStorage.setItem('msc482:homeNav', '1'); } catch (e) {} } location.href = sel.value; }));
     // nav links (smooth scroll + close drawer)
     $$('.nav-link').forEach(a => a.addEventListener('click', e => {
       e.preventDefault(); const t = $('#' + a.dataset.nav); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeDrawer();
@@ -269,7 +305,7 @@
 
   function taskInner(i) {
     const emoji = '<span class="t-emoji">' + (TYPE_EMOJI[i.type] || '•') + '</span>';
-    return i.url ? emoji + '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.label) + '</a>'
+    return i.url ? emoji + smartLink(i.url, i.label)
       : emoji + '<span class="t-nolink">' + esc(i.label) + '</span><span class="t-nolink-tag">no link</span>';
   }
   function modeBadge(i) { const m = MODE[i.mode] || MODE.flex; return '<span class="mode-badge ' + m.c + '" title="' + m.t + '">' + m.e + '</span>'; }
@@ -301,7 +337,7 @@
     if (graded.length) {
       let html = '<table class="deliv-table"><thead><tr><th>Deliverable</th><th>Points</th><th>Your target</th><th>Actual due</th></tr></thead><tbody>';
       graded.forEach(i => { const real = parseDue(i.due), target = new Date(real.getTime() - DAY);
-        html += '<tr><td>' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.label) + '</a>' : esc(i.label)) + '</td>' +
+        html += '<tr><td>' + (i.url ? smartLink(i.url, i.label) : esc(i.label)) + '</td>' +
           '<td class="deliv-pts">' + esc((i.note || '').split('·')[0].trim() || '—') + '</td><td>' + fmtDay(target) + '</td><td>' + fmtDateTime(real) + '</td></tr>'; });
       host.innerHTML = html + '</tbody></table>'; return;
     }
@@ -446,7 +482,7 @@
   }
 
   function wireHub() {
-    $$('[data-week-switch]').forEach(sel => sel.addEventListener('change', () => { if (sel.value) location.href = sel.value; }));
+    $$('[data-week-switch]').forEach(sel => sel.addEventListener('change', () => { if (!sel.value) return; if (sel.value === 'index.html') { try { sessionStorage.setItem('msc482:homeNav', '1'); } catch (e) {} } location.href = sel.value; }));
     $$('.nav-link').forEach(a => a.addEventListener('click', e => { e.preventDefault(); $('#' + a.dataset.nav)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeDrawer(); }));
     const col = $('#sbCollapse'), show = $('#sbShow');
     if (col) col.addEventListener('click', () => document.body.classList.add('sb-hidden'));
@@ -527,7 +563,7 @@
       const shown = isEvent ? fmtDateTime(real) : fmtDay(new Date(real.getTime() - DAY));
       html += '<tr class="' + (HUB.has(i.id) ? 'done' : '') + '"><td class="sched-icon">' + (i.type === 'live' ? '\ud83d\udcac' : '\u270f\ufe0f') + '</td>' +
         '<td class="sched-date">' + shown + (isEvent ? '' : ' <span class="sched-real">due ' + fmtDay(real) + '</span>') + '</td>' +
-        '<td class="sched-label">' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.label) + '</a>' : esc(i.label)) + ' <span class="sched-wk">W' + i.week + '</span></td>' +
+        '<td class="sched-label">' + (i.url ? smartLink(i.url, i.label) : esc(i.label)) + ' <span class="sched-wk">W' + i.week + '</span></td>' +
         '<td class="sched-kind">' + (i.type === 'assignment' ? esc((i.note || '').split('\u00b7')[0].trim()) : 'Zoom') + '</td></tr>';
     });
     host.innerHTML = html + '</tbody></table>';
