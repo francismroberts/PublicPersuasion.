@@ -306,6 +306,10 @@ a.pin-card:hover { transform:translateY(-1px); box-shadow:var(--shadow-md); text
 .src-tag.src-reading { background:#e7f0e8; color:#2f5c34; }
 .src-tag.src-live { background:#fbf3e6; color:#7a4d0c; }
 
+.lens-questions { margin:8px 0 0; padding:0 0 0 18px; font-size:12.5px; color:var(--ink2); line-height:1.6; }
+.lens-questions li { margin-bottom:4px; }
+.lens-questions b { color:var(--ink); }
+
 .notes-block { padding:20px 22px 22px; }
 .concept { padding:16px 0; border-top:1px solid var(--line); }
 .concept:first-child { border-top:0; padding-top:0; }

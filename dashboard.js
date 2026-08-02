@@ -473,8 +473,6 @@
   const HUB = new Set();
   const WEEK_BOUNDS = { 1: ['2026-07-26','2026-08-01'], 2: ['2026-08-02','2026-08-08'], 3: ['2026-08-09','2026-08-15'], 4: ['2026-08-16','2026-08-22'], 5: ['2026-08-23','2026-08-29'] };
   const MILESTONE_SHORT = { 'w1-live1': 'Course Launch', 'w2-asg1': 'Private Writing', 'w3-live1': 'Live Discussion (Wk 3)', 'w5-live1': 'Live Discussion (Wk 5)', 'w5-asg1': 'Speech script', 'w5-asg2': 'Speech video' };
-  const FRAMEWORK_URL = 'framework.html'; // set true once framework.html is built
-  const FRAMEWORK_LIVE = false;
 
   function initHub() {
     buildHubChrome();
@@ -520,6 +518,7 @@
     const bd = $('#mBackdrop'); [['#mbMenu', openDrawer], ['#mClose', closeDrawer]].forEach(([s, f]) => { const e = $(s); if (e) e.addEventListener('click', f); }); if (bd) bd.addEventListener('click', closeDrawer);
     $('#mbTop')?.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
     $('#hubPill')?.addEventListener('click', () => $('#s-weeks')?.scrollIntoView({ behavior: 'smooth' }));
+    $('#hubPinned')?.addEventListener('click', e => { if (!e.target.closest('#pinFrameworkLink')) return; e.preventDefault(); $('#s-framework')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     if ('IntersectionObserver' in window) { const obs = new IntersectionObserver(ents => ents.forEach(en => { if (en.isIntersecting) $$('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.nav === en.target.id)); }), { rootMargin: '-20% 0px -70% 0px' }); $$('.section-card').forEach(s => obs.observe(s)); }
   }
 
@@ -556,9 +555,7 @@
       '<div class="pin-real">Text due Wed Aug 26 \u00b7 Video due Thu Aug 27 \u00b7 5:00 p.m. CT</div>' +
       '<div class="pin-links"><a href="' + esc(sp1.url) + '" target="_blank" rel="noopener">' + (sp1Done ? '\u2713 ' : '') + 'Part 1 \u2014 script</a><a href="' + esc(sp2.url) + '" target="_blank" rel="noopener">' + (sp2Done ? '\u2713 ' : '') + 'Part 2 \u2014 video</a></div></div>';
 
-    const fwCard = FRAMEWORK_LIVE
-      ? '<a class="pin-card pin-framework" href="' + FRAMEWORK_URL + '"><div class="pin-top"><span class="pin-badge">\ud83e\udded Speech Analysis Framework</span></div><div class="pin-real">A structured way to break down any speech before you write your own.</div></a>'
-      : '<div class="pin-card pin-framework pin-soon"><div class="pin-top"><span class="pin-badge">\ud83e\udded Speech Analysis Framework</span><span class="pin-count">coming soon</span></div><div class="pin-real">Will link here once the standalone framework page is built.</div></div>';
+    const fwCard = '<a class="pin-card pin-framework" href="#s-framework" id="pinFrameworkLink"><div class="pin-top"><span class="pin-badge">\ud83e\udded Speech Analysis Framework</span></div><div class="pin-real">A structured way to break down any speech before you write your own.</div></a>';
 
     host.innerHTML = pwCard + spCard + fwCard;
   }
